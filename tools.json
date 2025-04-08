@@ -1,0 +1,1212 @@
+[
+  {
+    "name": "RunDiffusion",
+    "description": "פלטפורמה להרצת Stable Diffusion בענן עם ממשק גרפי – תומך ב-Automatic1111, ComfyUI, Foocus ועוד, בלי צורך בהתקנה מקומית.",
+    "category": "image",
+    "url": "https://rundiffusion.com/",
+    "icon": "fas fa-cloud",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "nnfs.io",
+    "description": "אתר קורסים ללמידה עצמית של רשתות נוירונים ולמידה עמוקה – עם דגש על הבנה מתמטית ותכנותית.",
+    "category": "education",
+    "url": "https://nnfs.io/",
+    "icon": "fas fa-brain",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "IDM VTON (Stable Diffusion)",
+    "description": "מודל AI שמאפשר להלביש וירטואלית בגדים על דמויות. כולל עיבוד תמונה והתאמות מדויקות.",
+    "category": "image",
+    "url": "https://huggingface.co/spaces/yisol/IDM-VTON",
+    "icon": "fas fa-tshirt",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "IDM VTON (Cuuupid)",
+    "description": "מודל AI שמאפשר להלביש וירטואלית בגדים על דמויות. כולל עיבוד תמונה והתאמות מדויקות.",
+    "category": "image",
+    "url": "https://replicate.com/cuuupid/idm-vton",
+    "icon": "fas fa-tshirt",
+    "rating": 4,
+    "isNew": true,
+    "isFeatured": false
+  },
+  {
+    "name": "Github Co-Pilot",
+    "description": "עוזר כתיבה חכם למפתחים – מציע קוד, משלים שורות, ומבין את ההקשר תוך כדי העבודה.",
+    "category": "coding",
+    "url": "https://github.com/features/copilot",
+    "icon": "fas fa-code",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Julius AI",
+    "description": "כלי המאפשר יצירת דוחות וניתוחים מתוך טבלאות בצורה טבעית – פשוט שואלים שאלה ומקבלים תשובה חכמה.",
+    "category": "data",
+    "url": "https://julius.ai/",
+    "icon": "fas fa-table",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Mendable",
+    "description": "פלטפורמה להוספת חוויית חיפוש תשובות חכמה לאתרים – כולל תמיכה במקורות שונים ויכולת להבין שאלות בשפה טבעית.",
+    "category": "search",
+    "url": "https://www.mendable.ai/",
+    "icon": "fas fa-search-plus",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Gitbook Lens",
+    "description": "מערכת AI לסיכום תוכן, חיפוש מתקדם והמלצות מתוך המסמכים שלך ב-GitBook. מצוין לצוותי תוכן ודוקומנטציה.",
+    "category": "productivity",
+    "url": "https://docs.gitbook.com/content-editor/searching-your-content/gitbook-ai",
+    "icon": "fas fa-book",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Kapwing",
+    "description": "כלי לעריכת וידאו מבוסס דפדפן – כולל כתוביות אוטומטיות, חיתוך, התאמה לפלטפורמות חברתיות ועוד.",
+    "category": "video",
+    "url": "https://www.kapwing.com/",
+    "icon": "fas fa-video",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "deeplearning.ai",
+    "description": "הבית של אנדרו נג ולמידת מכונה – קורסים, קהילה, מדריכים ומשאבים עדכניים למפתחים וחוקרים.",
+    "category": "education",
+    "url": "https://deeplearning.ai/",
+    "icon": "fas fa-graduation-cap",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Bubble",
+    "description": "פלטפורמת No-Code מתקדמת לבניית אפליקציות עם יכולות AI – כולל תמיכה ב-GPT-4 וכלי גרירה נוחים.",
+    "category": "builder",
+    "url": "https://bubble.io/",
+    "icon": "fas fa-puzzle-piece",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "officey.ai",
+    "description": "שירות תמיכה לקוחות אוטומטי מבוסס AI עם חיבור ל-Zendesk, אינטרקום ווואטסאפ. כולל תיעוד שיחות וניהול פניות.",
+    "category": "customer-support",
+    "url": "https://www.officey.ai/",
+    "icon": "fas fa-headset",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "fastbots.ai",
+    "description": "בוטים מהירים עם AI מובנה – שואבים תוכן מהאתר שלך ונותנים תמיכה אונליין 24/7 ללקוחות.",
+    "category": "customer-support",
+    "url": "https://fastbots.ai/",
+    "icon": "fas fa-robot",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "uchat",
+    "description": "פלטפורמת בניית צ’אטבוטים מתקדמת – כולל אוטומציות, ווב-הוקים, אינטגרציה לוואטסאפ ועוד.",
+    "category": "automation",
+    "url": "https://www.uchat.com.au/",
+    "icon": "fas fa-comments",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Flowise ai",
+    "description": "Low-code לבניית אפליקציות AI עם זרימות עבודה גרפיות – כולל תמיכה במודלי שפה גדולים, אינטגרציות וניהול API.",
+    "category": "builder",
+    "url": "https://flowiseai.com/",
+    "icon": "fas fa-diagram-project",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "WiX",
+    "description": "בניית אתרים בעיצוב מותאם אישית – פשוט לשימוש, מושלם לעסקים קטנים ויזמים.",
+    "category": "builder",
+    "url": "https://www.wix.com/",
+    "icon": "fas fa-globe",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Hostinger",
+    "description": "אירוח אתרים במחירים נוחים, עם ביצועים טובים, SSL חינם, ממשק קל וניהול WordPress מהיר.",
+    "category": "hosting",
+    "url": "https://www.hostinger.com/",
+    "icon": "fas fa-server",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "autogen",
+    "description": "יצירת סוכנים מבוססי שפה באופן אוטומטי וללא קוד – כולל תהליכי זרימה מתקדמים.",
+    "category": "agents",
+    "url": "https://www.microsoft.com/en-us/research/project/autogen/",
+    "icon": "fas fa-project-diagram",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "theresanaiforthat",
+    "description": "מאגר כלים אדיר – כל מה שחשבת עליו, כבר מישהו בנה עם AI. כולל חיפוש לפי תחום.",
+    "category": "directory",
+    "url": "https://theresanaiforthat.com/",
+    "icon": "fas fa-list",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "QR Code",
+    "description": "יצירת קודי QR לכל מטרה – כולל קישורים, אנשי קשר, מיילים ועוד.",
+    "category": "utility",
+    "url": "https://www.qrcode-monkey.com/#vcard",
+    "icon": "fas fa-qrcode",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "bitly",
+    "description": "קיצור לינקים עם סטטיסטיקות – לראות מי לחץ, מתי, וכמה. מותאם גם לשיווק.",
+    "category": "utility",
+    "url": "https://app.bitly.com/",
+    "icon": "fas fa-link",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "יובל AI",
+    "description": "המלצות של יובל על כלים מבוססי AI – פשוט, נוח ומוגש עם חיוך ישראלי.",
+    "category": "directory",
+    "url": "https://tools.yuv.ai/",
+    "icon": "fas fa-star",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "HuggingFace",
+    "description": "הבית של מודלים מבוססי AI, כולל קוד פתוח, דוגמאות לשימוש, וקהילה ענקית.",
+    "category": "platform",
+    "url": "https://huggingface.co/",
+    "icon": "fas fa-hands-helping",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Zapier Central",
+    "description": "חיבור בין אפליקציות לתהליכים אוטומטיים – חוסך שעות של עבודה חוזרת.",
+    "category": "automation",
+    "url": "https://zapier.com/central",
+    "icon": "fas fa-random",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Make",
+    "description": "פלטפורמה עוצמתית לאוטומציה בין שירותים, אפליקציות ו-API – כולל תהליכים מורכבים.",
+    "category": "automation",
+    "url": "https://www.make.com/",
+    "icon": "fas fa-network-wired",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "pexels",
+    "description": "אתר שמציע תמונות וסרטוני וידאו באיכות גבוהה – בחינם ולשימוש מסחרי, ללא צורך בקרדיט. אידיאלי ליוצרים ומעצבים.",
+    "category": "media",
+    "url": "https://www.pexels.com/",
+    "icon": "fas fa-camera",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "partyrock",
+    "description": "כלי של Amazon לבניית אפליקציות בינה מלאכותית – בלי כתיבת קוד. פשוט לגרור ולהריץ.",
+    "category": "builder",
+    "url": "https://partyrock.aws/apps",
+    "icon": "fas fa-tools",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "pmfm.ai",
+    "description": "פלטפורמה לבניית אפליקציות AI ללא קוד – תומכת באינטגרציות ושמירה אוטומטית.",
+    "category": "builder",
+    "url": "https://pmfm.ai/",
+    "icon": "fas fa-cogs",
+    "rating": 3,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Base44",
+    "description": "כלי חדש לבניית אפליקציות בינה מלאכותית ללא קוד. מתאים למתחילים ולניסויים מהירים.",
+    "category": "builder",
+    "url": "https://app.base44.com",
+    "icon": "fas fa-cube",
+    "rating": 3,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "nebius.ai",
+    "description": "פלטפורמת ניתוח AI לצוותים עסקיים – כולל המלצות, ניתוחי ביצועים ודוחות חכמים.",
+    "category": "productivity",
+    "url": "https://studio.nebius.ai/",
+    "icon": "fas fa-chart-line",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "ilovepdf",
+    "description": "סט כלים שלם לעבודה עם PDF: מיזוג, חלוקה, המרה, סיבוב, תיקון, פתיחה והצפנה.",
+    "category": "utility",
+    "url": "https://www.ilovepdf.com/",
+    "icon": "fas fa-file-pdf",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Canva",
+    "description": "עיצוב גרפי לכל אחד – מצגות, פוסטים, סרטונים ודפי נחיתה עם תבניות מדהימות.",
+    "category": "design",
+    "url": "https://www.canva.com/",
+    "icon": "fas fa-paint-brush",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "gamma.app",
+    "description": "יצירת מצגות תוך שניות בעזרת AI – מתאים לשיווק, הוראה ותכנים עסקיים.",
+    "category": "presentation",
+    "url": "https://gamma.app/",
+    "icon": "fas fa-chalkboard-teacher",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "mylens",
+    "description": "יצירת וידאו קצר על נושא בהתבסס רק על טקסט. מתאים במיוחד לתוכן חינוכי בעברית.",
+    "category": "video",
+    "url": "https://mylens.ai/",
+    "icon": "fas fa-video",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Notion AI",
+    "description": "כלי AI מובנה בתוך Notion – מצוין לכתיבה, סיכום, רעיונאות ואירגון ידע.",
+    "category": "productivity",
+    "url": "https://www.notion.so/product/ai",
+    "icon": "fas fa-brain",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "TimeOS",
+    "description": "מזכירות AI לפגישות – כולל סיכומים אוטומטיים לזום, קישורים, מעקב משימות ושיתוף.",
+    "category": "productivity",
+    "url": "https://timeos.com/",
+    "icon": "fas fa-clock",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Mobirise",
+    "description": "כלי לבניית אתרים ללא קוד – מצוין לנחיתות, תיקים אישיים, וללקוחות קטנים.",
+    "category": "builder",
+    "url": "https://mobirise.com/",
+    "icon": "fas fa-globe",
+    "rating": 3,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "images to text",
+    "description": "חילוץ טקסט מתמונות בעברית ובשפות נוספות – כולל OCR איכותי לקבצים סרוקים.",
+    "category": "utility",
+    "url": "https://sagi-detect-text-from-images.streamlit.app/",
+    "icon": "fas fa-file-alt",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "sagi-images-to-pdf",
+    "description": "המרת תמונות רבות לקובץ PDF אחד בלחיצת כפתור – כולל ממשק גרירה פשוט.",
+    "category": "utility",
+    "url": "https://sagi-images-to-pdf.streamlit.app/",
+    "icon": "fas fa-file-pdf",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Sketch.metademolab",
+    "description": "כלי לילדים לציור חווייתי – יצירת דמויות בתנועה שמתעוררות לחיים.",
+    "category": "design",
+    "url": "https://sketch.metademolab.com/",
+    "icon": "fas fa-child",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Foocus",
+    "description": "יצירת תמונות מדויקות ממילות מפתח, עם אפשרות לצפייה מקדימה ולתיקונים בזמן אמת.",
+    "category": "image",
+    "url": "https://github.com/lllyasviel/Fooocus",
+    "icon": "fas fa-image",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Ip-Adapter-FaceID",
+    "description": "שילוב תמונות AI עם הפנים שלך – לזיהוי, שילוב דמויות, או פרצופים ממותגים.",
+    "category": "image",
+    "url": "https://huggingface.co/spaces/multimodalart/Ip-Adapter-FaceID",
+    "icon": "fas fa-user-check",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Face to All SDXL",
+    "description": "המרת פנים קיימות לדמויות AI – לדוגמה, פרצוף שלך הופך ל-emojי או גיבור קומיקס.",
+    "category": "image",
+    "url": "https://huggingface.co/spaces/multimodalart/face-to-all",
+    "icon": "fas fa-smile",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Leonardo",
+    "description": "כלי ליצירת תמונות מדויקות ואומנותיות מבוססות AI – כולל טיוטות וגרסאות.",
+    "category": "image",
+    "url": "https://leonardo.ai/",
+    "icon": "fas fa-palette",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Midjourney",
+    "description": "אחד הכלים הפופולריים בעולם ליצירת תמונות מתיאורים טקסטואליים – תוצאות ברמה מטורפת.",
+    "category": "image",
+    "url": "https://www.midjourney.com/home",
+    "icon": "fas fa-brush",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "BGBYe",
+    "description": "הסרת רקע מתמונות – תומך באיורים, לוגואים, וצילומים. פשוט וקל.",
+    "category": "image",
+    "url": "https://fyrean.itch.io/bgbye-background-remover",
+    "icon": "fas fa-eraser",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Adobe Firefly",
+    "description": "המערכת של אדובי ליצירת תוכן גרפי מתיאורים – כולל טקסטים, צבעים, וסטיילים.",
+    "category": "design",
+    "url": "https://firefly.adobe.com/",
+    "icon": "fas fa-fire",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Automatic1111",
+    "description": "הגרסה הפופולרית ביותר להרצת Stable Diffusion – כולל הרחבות, פילטרים וכלי שליטה.",
+    "category": "image",
+    "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+    "icon": "fas fa-terminal",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "ComfyUI",
+    "description": "מערכת גרפית ליצירת תמונות באמצעות Stable Diffusion – סופר גמישה עם קוד פתוח.",
+    "category": "image",
+    "url": "https://github.com/comfyanonymous/ComfyUI",
+    "icon": "fas fa-project-diagram",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "miocreate",
+    "description": "פלטפורמה לשיתוף רעיונות ויצירה גרפית עם שיתוף בזמן אמת – כמו לוח ציור שיתופי.",
+    "category": "design",
+    "url": "https://www.miocreate.com/",
+    "icon": "fas fa-chalkboard",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "FaceFusion",
+    "description": "כלי פשוט למיזוג פנים בין תמונות או בין אנשים – מתאים לקליפים ולוידאו קצר.",
+    "category": "video",
+    "url": "https://facefusion.io/",
+    "icon": "fas fa-user-friends",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "glif.ai",
+    "description": "מערכת המרה של תסריטים לטמפלטים ויזואליים – כולל קומיקסים, מצגות וסרטוני שיווק.",
+    "category": "video",
+    "url": "https://glif.app/glifs",
+    "icon": "fas fa-book-open",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "pica-ai.com/face-swap",
+    "description": "כלי להחלפת פנים בתמונות עם תוצאות ריאליסטיות. מתאים ליצירת תמונות הומוריסטיות או ליצירת דמויות בדיוניות.",
+    "category": "image",
+    "url": "https://www.pica-ai.com/face-swap/",
+    "icon": "fas fa-smile",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "immersity.ai",
+    "description": "המרת תמונות רגילות לתמונות תלת ממד שנראות חיים! מתאים למצגות, שיווק, ומציאות מדומה.",
+    "category": "image",
+    "url": "https://app.immersity.ai/",
+    "icon": "fas fa-vr-cardboard",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "GOEnhance",
+    "description": "כלי לשיפור סאונד ויזואלי של סרטונים באמצעות AI – כולל תמלול, ניקוי רעשים, סנכרון ושיפור חוויית הצפייה.",
+    "category": "video",
+    "url": "https://www.goenhance.ai/?aff=sagibaron",
+    "icon": "fas fa-video",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "domoai.app",
+    "description": "עורך תמונות מבוסס AI ליצירת סצנות מדהימות מדימיון. מתאים גם לוידאו, קומיקס ודמויות.",
+    "category": "image",
+    "url": "https://domoai.app/",
+    "icon": "fas fa-image",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "lensgo.ai",
+    "description": "כלי AI לעריכת תמונות עם סגנונות מובנים ואפשרויות התאמה אישית. כולל רקעים, טקסטורות ואפקטים.",
+    "category": "image",
+    "url": "https://lensgo.ai/",
+    "icon": "fas fa-adjust",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Krea.ai",
+    "description": "יצירת תוכן חזותי בזמן אמת בעזרת AI – תומך בגרפיקה, ציור, מיתוג ועיצוב. מושלם ליוצרים.",
+    "category": "design",
+    "url": "https://www.krea.ai/home",
+    "icon": "fas fa-pen-nib",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Ideogram.ai",
+    "description": "כלי ליצירת תמונות עם טקסט ברור – עיצוב פוסטרים, מודעות, סטיקרים ועוד.",
+    "category": "image",
+    "url": "https://ideogram.ai/",
+    "icon": "fas fa-font",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "civitai",
+    "description": "מאגר עצום של מודלים מותאמים ליצירת דמויות, ציורים, סטיילים ועוד. תומך ב-Stable Diffusion.",
+    "category": "image",
+    "url": "https://civitai.com/",
+    "icon": "fas fa-draw-polygon",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "stablediffusionweb",
+    "description": "גרסת אינטרנט של Stable Diffusion – יצירת תמונות מרהיבות בלי להוריד כלום.",
+    "category": "image",
+    "url": "https://stablediffusionweb.com/",
+    "icon": "fas fa-project-diagram",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "JPG to PDF",
+    "description": "כלי שמאפשר המרת תמונות לקובץ PDF אחד. מושלם לשליחת דוחות, קבלות או עבודות.",
+    "category": "utility",
+    "url": "https://convertio.co/he/jpg-pdf/",
+    "icon": "fas fa-file-pdf",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "text from images",
+    "description": "חילוץ טקסטים מתמונות בעברית (OCR) – כולל תמיכה בקבצי PDF וסריקות. קל ונוח.",
+    "category": "utility",
+    "url": "https://convertio.co/ocr/hebrew/",
+    "icon": "fas fa-search",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Play.ht",
+    "description": "מנוע דיבור מבוסס AI עם קולות טבעיים – להמרת טקסט לפודקאסטים, קריינות וסרטונים.",
+    "category": "audio",
+    "url": "https://play.ht/",
+    "icon": "fas fa-microphone",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "notebooklm",
+    "description": "מחברת AI של גוגל שעוזרת לך ללמוד כל מסמך במהירות. שואל שאלות ומארגן את המידע.",
+    "category": "productivity",
+    "url": "https://notebooklm.google.com/",
+    "icon": "fas fa-book",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Kits.AI",
+    "description": "מנוע דיבור מוזיקלי – מאפשר להלביש קול על מנגינה קיימת. מושלם ליצירת דמוים וגרסאות.",
+    "category": "audio",
+    "url": "https://www.kits.ai/",
+    "icon": "fas fa-headphones-alt",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Weights.gg",
+    "description": "מאגר של מודלים ללמידת מכונה עם פילטרים, תיוגים ואופטימיזציות – פשוט גן עדן לחוקרי ML.",
+    "category": "coding",
+    "url": "https://weights.gg/",
+    "icon": "fas fa-database",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Virit.ai",
+    "description": "מנוע דיבור בעברית – תומך בקול טבעי עד 30 שניות. מצוין לקריינות קלה.",
+    "category": "audio",
+    "url": "https://www.ivrit.ai/he/174-2/",
+    "icon": "fas fa-language",
+    "rating": 3,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "speechgen",
+    "description": "המרת טקסט לקול בעברית ובשפות נוספות – כולל מבטאים ורגש בקול.",
+    "category": "audio",
+    "url": "https://speechgen.io/he/tts-hebrew/",
+    "icon": "fas fa-volume-down",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "podcast.adobe",
+    "description": "שיפור איכות סאונד לפודקאסטים והקלטות עם AI. שומעים את ההבדל!",
+    "category": "audio",
+    "url": "https://podcast.adobe.com/enhance",
+    "icon": "fas fa-soundcloud",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "VIDE",
+    "description": "מנהל רגש – אפליקציה לחיזוי תנועות קול על סמך רגש. ניסיוני אבל מסקרן.",
+    "category": "audio",
+    "url": "https://thewh1teagle.github.io/vibe/",
+    "icon": "fas fa-heartbeat",
+    "rating": 3,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "WhatsApp",
+    "description": "נגישות קולית בוואטסאפ – כולל תמלול אוטומטי של הודעות קוליות והצגה ויזואלית שלהן.",
+    "category": "accessibility",
+    "url": "https://play.google.com/store/apps/details?id=com.google.audio.hearing.visualization.accessibility.scribe",
+    "icon": "fab fa-whatsapp",
+    "rating": 3,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Hume.ai",
+    "description": "חברה שמפתחת ממשקי קול מבוססי רגש אנושי – כולל זיהוי רגשות מהקלטה ושיחה אמפתית עם מכונה.",
+    "category": "audio",
+    "url": "https://www.hume.ai/",
+    "icon": "fas fa-brain",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Prome AI",
+    "description": "יצירת תוכן גרפי/אדריכלי מבוסס בינה מלאכותית – כולל שרטוטים, תכניות ומצגות.",
+    "category": "design",
+    "url": "https://www.promeai.pro/",
+    "icon": "fas fa-drafting-compass",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Readyplayer.me",
+    "description": "יצירת אוואטרים תלת-ממדיים למטאוורס וגיימינג – כולל התאמה אישית של פנים, שיער ולבוש.",
+    "category": "design",
+    "url": "https://readyplayer.me/",
+    "icon": "fas fa-gamepad",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Artflow",
+    "description": "צייר AI שמאפשר ליצור דמויות מאוירות לפי תיאור טקסט. כולל קומיקס, סצנות וסיפורים.",
+    "category": "image",
+    "url": "https://app.artflow.ai/",
+    "icon": "fas fa-pencil-alt",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "ClipDrop",
+    "description": "כלי עריכה גרפית מבוסס AI להסרת רקעים, תיקונים, שדרוג תמונות ויצירת מצגות תוך שניות.",
+    "category": "design",
+    "url": "https://clipdrop.co/",
+    "icon": "fas fa-crop-alt",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "face-swap-free",
+    "description": "החלפת פנים בתמונות בקליק – מצחיק, חזק, ומומלץ למי שאוהב לשגע את החברים.",
+    "category": "image",
+    "url": "https://remaker.ai/face-swap-free/",
+    "icon": "fas fa-smile-beam",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "vmake.ai",
+    "description": "שיפור איכות וידאו בלחיצת כפתור – חדות, צבעים, ותנועה. בונוס: נראה כאילו השתמשת בעריכת פרסומת סופרבול.",
+    "category": "video",
+    "url": "https://vmake.ai/video-enhancer/upload",
+    "icon": "fas fa-magic",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "LivePortrait",
+    "description": "החייאת פורטרט – הפוך תמונה סטטית לדמות מדברת עם תנועה ושפתיים מסתנכרנות.",
+    "category": "video",
+    "url": "https://huggingface.co/spaces/KwaiiGV/LivePortrait",
+    "icon": "fas fa-user",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "genspark.ai",
+    "description": "הפצת תמונות עם הלבשה + סטיילים מתקדמים. מתאים לממים, פרופילים ואיורים מקוריים.",
+    "category": "image",
+    "url": "https://www.genspark.ai/",
+    "icon": "fas fa-sparkles",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "klingai",
+    "description": "שינוי דמויות, הבעות ותכונות בפנים – כלי שמאפשר עריכה של פרצופים בקלות ובלי ידע טכני.",
+    "category": "image",
+    "url": "https://klingai.com/",
+    "icon": "fas fa-user-edit",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Suno",
+    "description": "הפקת מוזיקה מקורית כולל שירה, לחן, הרמוניה – מאפס, בסטייל שאתה בוחר.",
+    "category": "audio",
+    "url": "https://suno.ai/",
+    "icon": "fas fa-music",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "sound",
+    "description": "הפרדת קול מהשיר (כמו קריוקי!) – כולל אפשרות להוריד רק שירה או רק ליווי.",
+    "category": "audio",
+    "url": "https://sagi-separate-the-voices-from-the-music-in-the-song.streamlit.app/",
+    "icon": "fas fa-headphones",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Elevenlabs.io",
+    "description": "סינתזה קולית (TTS) איכותית עם מגוון קולות מרשימים. אפשר אפילו להעלות דוגמת קול משלך.",
+    "category": "audio",
+    "url": "https://elevenlabs.io/",
+    "icon": "fas fa-robot",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "TTSmaker",
+    "description": "המרת טקסט לקול עם תמיכה בהרבה שפות (כולל עברית). פשוט, מהיר, ולגמרי בחינם.",
+    "category": "audio",
+    "url": "https://ttsmaker.com/",
+    "icon": "fas fa-volume-up",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "טקסט-לדיבור",
+    "description": "פרויקט קוד פתוח לגמרי להמרת טקסט לדיבור. מתאים לשילוב בפיתוחים או ניסויים חינמיים.",
+    "category": "audio",
+    "url": "https://github.com/maxmelichov/Text-To-Speech",
+    "icon": "fas fa-code",
+    "rating": 3,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Replay AI",
+    "description": "כלי לזיהוי דוברים – מגלה מי אמר מה, מתי, ואיך. מושלם לפרודקאסטים, תמלולים וניתוח שיחות.",
+    "category": "audio",
+    "url": "https://www.tryreplay.io/",
+    "icon": "fas fa-wave-square",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "RVC Training",
+    "description": "מערכת לאימון והמרת קול אנושי – להפוך קול שלך (או של חבר) לדמות אחרת או זמר אחר.",
+    "category": "audio",
+    "url": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/releases",
+    "icon": "fas fa-random",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "EchoWave",
+    "description": "הפקת וידאו עם אנימציות לזמרים ודוברים – כולל תנועה לקול, טקסט ודמות. בול ליוצרים.",
+    "category": "video",
+    "url": "https://echowave.io/",
+    "icon": "fas fa-waveform",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "HeyGen",
+    "description": "יצירת אוואטרים מדברים מטקסט (ליפסינק), כולל שינוי שפה וסגנון. מתאים ליצירת סרטוני תדמית אישיים.",
+    "category": "video",
+    "url": "https://app.heygen.com/",
+    "icon": "fas fa-user-circle",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "hydra",
+    "description": "כלי ליצירת דמויות מדברות מטקסט (כולל ליפסינק) עם שליטה קולית ושפתית – בדגש על שימוש חופשי.",
+    "category": "video",
+    "url": "https://www.hedra.com/",
+    "icon": "fas fa-user-alt",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "D-ID",
+    "description": "יצירת וידאו עם דמויות מדברות מתמונה סטטית. אידיאלי למצגות, הדרכות ושיווק אישי.",
+    "category": "video",
+    "url": "https://www.d-id.com/",
+    "icon": "fas fa-image",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "CapCut",
+    "description": "עריכת וידאו, יצירת תוכן מקצועי ומהיר כולל כלים של AI – מושלם ליוצרים.",
+    "category": "video",
+    "url": "https://www.capcut.com/",
+    "icon": "fas fa-cut",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Captions",
+    "description": "תמלול וידאו (כתוביות) אוטומטי, כולל תרגום, עריכה קולית וקריינות. ממשק פשוט בעברית.",
+    "category": "video",
+    "url": "https://www.captions.ai/",
+    "icon": "fas fa-closed-captioning",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Happyscribe",
+    "description": "תמלול אודיו ווידאו – תומך בעברית. מאפשר הפקת כתוביות, תרגום, וסנכרון עם עריכה.",
+    "category": "writing",
+    "url": "https://www.happyscribe.com/",
+    "icon": "fas fa-file-audio",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Yepic",
+    "description": "המרת טקסטים לווידאו עם דמויות מדברות – כולל תמיכה בשפות רבות וליפסינק אוטומטי.",
+    "category": "video",
+    "url": "https://www.yepic.ai/",
+    "icon": "fas fa-video",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "PIKA",
+    "description": "יצירת אנימציות ווידאו ממלל או ציור. הכלי החדש שהופך אותך לבמאי תוך דקות.",
+    "category": "video",
+    "url": "https://pika.art/",
+    "icon": "fas fa-film",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "PixVerse",
+    "description": "יצירת סרטונים ואיורים מבוססי בינה מלאכותית. תומך באנימציה, ציור ורנדרים קצרים.",
+    "category": "video",
+    "url": "https://pixverse.ai/",
+    "icon": "fas fa-paint-brush",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Viggle",
+    "description": "מערכת אנימציה מדהימה שיודעת להזיז דמויות בצורה ריאליסטית לפי תנועה אמיתית. מושלם ליצירת קליפים וסרטוני הסברה.",
+    "category": "video",
+    "url": "https://viggle.ai/",
+    "icon": "fas fa-running",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "clipchamp",
+    "description": "כלי עריכת וידאו של מיקרוסופט, נוח מאוד לתלמידים, אנשי שיווק ויוצרים. ללא צורך בהתקנה.",
+    "category": "video",
+    "url": "https://app.clipchamp.com/",
+    "icon": "fas fa-edit",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Perplexity",
+    "description": "מנוע חיפוש חכם שמופעל על ידי AI. נותן תשובות מדויקות עם מקורות, ומצוין למציאת מידע מהימן בעברית ובאנגלית.",
+    "category": "search",
+    "url": "https://www.perplexity.ai/",
+    "icon": "fas fa-search",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Copilot",
+    "description": "מוטמע במוצרי מיקרוסופט ונותן הצעות קוד בזמן אמת. תומך ב-Edge, ב-Word, וב-Excel. פשוט תענוג.",
+    "category": "coding",
+    "url": "https://copilot.microsoft.com/",
+    "icon": "fas fa-code",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Groq",
+    "description": "עיבוד נתונים מהיר במיוחד עבור שימושי AI בזמן אמת. הכל רץ במהירות שגורמת לכולם לקנא.",
+    "category": "infrastructure",
+    "url": "https://groq.com/",
+    "icon": "fas fa-microchip",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Cohere",
+    "description": "חברה קנדית שמספקת פתרונות מבוססי LLMs – בעיקר לעיבוד שפה טבעית, חיפוש והפקת תובנות. מתאימה לארגונים.",
+    "category": "nlp",
+    "url": "http://www.cohere.ai/",
+    "icon": "fas fa-language",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "OOGA-BOOGA",
+    "description": "ממשק קוד פתוח להפעלת מודלים של GPT בצורה מקומית. מיועד לחובבי שליטה מלאה על המערכת.",
+    "category": "coding",
+    "url": "https://github.com/oobabooga/text-generation-webui",
+    "icon": "fas fa-terminal",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "LM Studio",
+    "description": "ממשק שמריץ מודלים של שפה באופן מקומי על המחשב שלך – כולל תמיכה בעבודה גם בלי אינטרנט.",
+    "category": "nlp",
+    "url": "https://lmstudio.ai/",
+    "icon": "fas fa-laptop-code",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Ollama",
+    "description": "היא אפליקציה שמאפשרת להריץ מודלים כמו Llama ו-Mistral מקומית. תומכת ב-Windows, macOS, Linux, וגם בברווז גומי.",
+    "category": "nlp",
+    "url": "https://ollama.com/",
+    "icon": "fas fa-cube",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "together",
+    "description": "פלטפורמה להרצת מודלים פתוחים בענן. תומכת בהרבה מאוד מודלים ומציעה חוויית API קלה לשימוש.",
+    "category": "infrastructure",
+    "url": "https://api.together.ai/",
+    "icon": "fas fa-cloud",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "ChatGPT",
+    "description": "מנוע על שאלות בכל הנושאים. נוח מאוד, אינטואיטיבי, זמין דרך ממשק אינטרנט.",
+    "category": "productivity",
+    "url": "https://chat.openai.com/",
+    "icon": "fas fa-comment-dots",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "GPTs",
+    "description": "איך ליצור סוכן מבוסס GPT בהתאמה אישית באמצעות OpenAI.",
+    "category": "productivity",
+    "url": "https://chatgpt.com/gpts",
+    "icon": "fas fa-robot",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Midjourney",
+    "description": "כלי מבוסס AI שיוצר תמונות מתיאורים טקסטואליים.",
+    "category": "design",
+    "url": "https://www.midjourney.com",
+    "icon": "fas fa-paint-brush",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Notion AI",
+    "description": "סביבת עבודה חכמה שעוזרת בניהול פרויקטים, רשימות ומידע.",
+    "category": "productivity",
+    "url": "https://www.notion.so",
+    "icon": "fas fa-list-alt",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "GitHub Copilot",
+    "description": "עוזר תכנות חכם שמציע קוד ופונקציות שלמות בזמן אמת.",
+    "category": "coding",
+    "url": "https://github.com/features/copilot",
+    "icon": "fas fa-code",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Runway ML",
+    "description": "ארגז כלים יצירתי מבוסס למידת מכונה ליצירת תוכן.",
+    "category": "video",
+    "url": "https://runwayml.com",
+    "icon": "fas fa-film",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Jasper",
+    "description": "מחולל תוכן אוטומטי שעוזר בכתיבת טקסטים שיווקיים ובלוגים.",
+    "category": "writing",
+    "url": "https://www.jasper.ai",
+    "icon": "fas fa-pen-fancy",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "DALL-E 2",
+    "description": "מערכת AI שיוצרת תמונות ואומנות מתיאורים בשפה טבעית.",
+    "category": "design",
+    "url": "https://openai.com/dall-e-2",
+    "icon": "fas fa-palette",
+    "rating": 5,
+    "isNew": false,
+    "isFeatured": true
+  },
+  {
+    "name": "Synthesia",
+    "description": "יצירת סרטונים מקצועיים עם אווטרים קוליים מבוססי AI.",
+    "category": "video",
+    "url": "https://www.synthesia.io",
+    "icon": "fas fa-video",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Copy.ai",
+    "description": "כלי כתיבה אוטומטי שעוזר ביצירת תוכן שיווקי.",
+    "category": "writing",
+    "url": "https://www.copy.ai",
+    "icon": "fas fa-keyboard",
+    "rating": 3,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Claude",
+    "description": "מנוע על מבית Anthropic – עונה על שאלות בצורה נעימה ובשפה טבעית, כולל תמיכה מרשימה בעברית.",
+    "category": "productivity",
+    "url": "https://claude.ai/",
+    "icon": "fas fa-comments",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": false
+  },
+  {
+    "name": "Gemini",
+    "description": "הצ'אטבוט של גוגל – מבוסס על מודלים מתקדמים של AI ומחובר לחיפוש בזמן אמת.",
+    "category": "productivity",
+    "url": "https://gemini.google.com/",
+    "icon": "fas fa-brain",
+    "rating": 4,
+    "isNew": false,
+    "isFeatured": true
+  }
+]

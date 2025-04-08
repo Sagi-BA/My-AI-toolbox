@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "יצירת סוכן GTPs בקלות",
+        "description": "יצרתי GPTs ייחודי שמסייע לגיסתי בעבודתה עם ילדים בעלי צרכים מיוחדים",
+        "url": "https://www.youtube.com/embed/iSIWAGgUIcg",
+        "thumbnail": "https://img.youtube.com/vi/abc123/mqdefault.jpg",
+        "date": "2023-05-15"
+    },
+    {
+        "id": 2,
+        "title": "המרת אודיו בעברית לטקסט - תמלול אוטומטי בחינם!",
+        "description": "כיצד לתמלל קבצי קול בשפה העברית בצורה פשוטה ומהירה",
+        "url": "https://www.youtube.com/embed/MQy9afP0VKw",
+        "thumbnail": "https://img.youtube.com/vi/def456/mqdefault.jpg",
+        "date": "2024-06-20"
+    },
+    {
+        "id": 3,
+        "title": "תמלול וסיכום פגישות אוטומטי",
+        "description": "TimeOS.ia, המאפשרת לבינה מלאכותית להשתתף בפגישות בפלטפורמות שונות, לתמלל, לסכם וליצור משימות מתוך השיחות",
+        "url": "https://www.youtube.com/embed/nkogPCmzyjY",
+        "thumbnail": "https://img.youtube.com/vi/ghi789/mqdefault.jpg",
+        "date": "2024-06-19"
+    }
+]

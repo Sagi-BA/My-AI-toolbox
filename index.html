@@ -1,0 +1,936 @@
+
+<!-- 
+ https://huggingface.co/spaces/theWitcher/sagi-ai-tools
+ https://huggingface.co/spaces/theWitcher/sagi-ai-tools/blob/main/index.html 
+ 
+ -->
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ארגז הכלים שלי לבינה מלאכותית</title>
+    <script src="https://cdn.tailwindcss.com">
+function getYouTubeID(url) {
+    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([^?&\/\s]+)/);
+    return match ? match[1] : '';
+}
+
+function renderVideos() {
+    const videosContainer = document.getElementById('videosContainer');
+    if (!videosContainer) return;
+
+    videosContainer.innerHTML = '';
+
+    toolsData.videos.forEach(video => {
+        const videoId = getYouTubeID(video.url);
+        const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+
+        const videoCard = document.createElement('div');
+        videoCard.className = 'bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden';
+
+        videoCard.innerHTML = `
+            <div class="relative pt-[56.25%]">
+                <iframe class="absolute top-0 left-0 w-full h-full" src="${embedUrl}" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">${video.title}</h3>
+                <p class="text-gray-600 text-sm mb-3">${video.description}</p>
+                <p class="text-gray-500 text-xs">${formatDate(video.date)}</p>
+            </div>
+        `;
+
+        videosContainer.appendChild(videoCard);
+    });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    renderVideos();
+});
+
+</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Arimo', sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .category-filter .active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* RTL specific styles */
+        [dir="rtl"] .rotate-180 {
+            transform: rotate(180deg);
+        }
+        
+        /* Mobile menu styles */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        
+        /* Admin badge */
+        .admin-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #ef4444;
+            color: white;
+            border-radius: 9999px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        /* Futuristic profile image */
+        .profile-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3b82f6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(59, 130, 246, 0.7);
+            animation: rotate infinite linear;
+        }
+
+        .tech-circle-1 {
+            width: 220px;
+            height: 220px;
+            top: -10px;
+            left: -10px;
+            animation-duration: 15s;
+            border-style: dashed;
+        }
+
+        .tech-circle-2 {
+            width: 240px;
+            height: 240px;
+            top: -20px;
+            left: -20px;
+            animation-duration: 20s;
+            animation-direction: reverse;
+        }
+
+        .tech-circle-3 {
+            width: 260px;
+            height: 260px;
+            top: -30px;
+            left: -30px;
+            animation-duration: 25s;
+            border-style: dotted;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .tech-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .tech-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #8b5cf6;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Futuristic AI elements */
+        .ai-particle {
+            position: absolute;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+            opacity: 0.6;
+            filter: blur(10px);
+            z-index: 0;
+        }
+
+        .ai-circuit {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at center, transparent 0%, #f9fafb 100%),
+                linear-gradient(90deg, transparent 49%, rgba(59, 130, 246, 0.1) 50%, transparent 51%),
+                linear-gradient(0deg, transparent 49%, rgba(59, 130, 246, 0.1) 50%, transparent 51%);
+            background-size: 20px 20px;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuButton" class="md:hidden text-gray-600 mr-4">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold gradient-text">ארגז הכלים שלי ל-AI</h1>
+                        <p class="text-gray-600 text-sm md:text-base mt-1">אוסף כלי הבינה המלאכותית המומלצים שלי</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4 space-x-reverse">
+                    <button id="refreshBtn" class="px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition">
+                        <i class="fas fa-sync-alt ml-2"></i> רענן
+                    </button>
+                    <!-- <button id="editJsonBtn" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition relative">
+                        <i class="fas fa-edit ml-2"></i> ערוך JSON
+                        <span class="admin-badge">A</span>
+                    </button> -->
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden mt-4">
+                <div class="flex flex-col space-y-2 py-2">
+                    <button id="refreshBtnMobile" class="px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition text-right">
+                        <i class="fas fa-sync-alt ml-2"></i> רענן
+                    </button>
+                    <button id="editJsonBtnMobile" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition text-right relative">
+                        <i class="fas fa-edit ml-2"></i> ערוך JSON
+                        <span class="admin-badge">A</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- About Me Section - Moved to the top -->
+        <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100 mb-8 relative overflow-hidden">
+            <!-- AI Particles Background -->
+            <div class="ai-particle" style="width: 100px; height: 100px; top: -30px; right: -30px;"></div>
+            <div class="ai-particle" style="width: 150px; height: 150px; bottom: -50px; left: -50px;"></div>
+            <div class="ai-particle" style="width: 80px; height: 80px; top: 50%; right: 20%;"></div>
+            
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">קצת עליי</h2>
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="md:w-1/3">
+                    <div class="profile-container">
+                        <!-- AI Circuit Background -->
+                        <div class="ai-circuit"></div>
+                        
+                        <!-- Tech circles -->
+                        <div class="tech-circle tech-circle-1"></div>
+                        <div class="tech-circle tech-circle-2"></div>
+                        <div class="tech-circle tech-circle-3"></div>
+                        
+                        <!-- Tech dots -->
+                        <div class="tech-dots">
+                            <div class="tech-dot" style="top: 10%; left: 50%;"></div>
+                            <div class="tech-dot" style="top: 50%; left: 10%;"></div>
+                            <div class="tech-dot" style="top: 90%; left: 50%;"></div>
+                            <div class="tech-dot" style="top: 50%; left: 90%;"></div>
+                            <div class="tech-dot" style="top: 30%; left: 30%;"></div>
+                            <div class="tech-dot" style="top: 70%; left: 70%;"></div>
+                            <div class="tech-dot" style="top: 30%; left: 70%;"></div>
+                            <div class="tech-dot" style="top: 70%; left: 30%;"></div>
+                        </div>
+                        
+                        <!-- Profile image -->
+                        <img src="https://i.imgur.com/cnlxCuj.jpeg" alt="שגיא בר און" class="profile-image">
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-xl font-semibold mb-4">שגיא בר און</h3>
+                    <p class="text-gray-700 mb-4">
+                        אני חוקר ויועץ בתחום הבינה המלאכותית, מאסטר NLP, ובעל ניסיון של למעלה מ-25 שנה בתעשיית ההייטק. בעל מומחיות רחבה בפיתוח תוכנה, אוטומציה, ניהול פרויקטים ואסטרטגיה עסקית.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        מרצה אורח באוניברסיטת רייכמן וחבר בסגל הבוחנים של מה"ט - המכון הממשלתי להכשרה בטכנולוגיה ובמדע - לבחינות מהנדסי תוכנה באוניברסיטאות ובמכללות, וכן מנטור לAI במסגרת משרד החינוך.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        בעל תואר שני במנהל עסקים עם התמחות בבינה מלאכותית, תואר ראשון (BSc) במדעי המחשב והנדסאי תוכנה. ההרצאות משלבות ידע עדכני, חשיבה ביקורתית והתנסות חווייתית, מתוך מטרה להעצים אנשים ולאפשר להם להשתמש בטכנולוגיה בחוכמה ובקלות.
+                    </p>
+                    <p class="text-gray-700">
+                        שמתי לי למטרה להנגיש, להסביר ולחבר את הטכנולוגיה בצורה פשוטה וברורה לכולם.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="mb-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="relative w-full md:w-96">
+                    <input type="text" id="searchInput" placeholder="חפש כלים..." class="w-full pr-10 pl-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    <i class="fas fa-search absolute right-3 top-3.5 text-gray-400"></i>
+                </div>
+                
+                <div class="flex items-center space-x-2 space-x-reverse">
+                    <span class="text-gray-600 hidden md:block">סנן לפי:</span>
+                    <div class="category-filter flex flex-wrap gap-2">
+                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="all">הכל</button>
+                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="productivity">פרודוקטיביות</button>
+                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="writing">כתיבה</button>
+                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="design">עיצוב</button>
+                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="coding">תכנות</button>
+                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="video">וידאו</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-50 text-blue-600 ml-3">
+                        <i class="fas fa-tools text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm">סה"כ כלים</p>
+                        <h3 class="text-xl font-semibold" id="totalTools">0</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-purple-50 text-purple-600 ml-3">
+                        <i class="fas fa-star text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm">מובילים בדירוג</p>
+                        <h3 class="text-xl font-semibold" id="topRated">0</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-50 text-green-600 ml-3">
+                        <i class="fas fa-bolt text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm">חדשים השבוע</p>
+                        <h3 class="text-xl font-semibold" id="newTools">0</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-yellow-50 text-yellow-600 ml-3">
+                        <i class="fas fa-tags text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm">קטגוריות</p>
+                        <h3 class="text-xl font-semibold" id="totalCategories">0</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tools Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="toolsContainer">
+            <!-- Tools will be loaded here -->
+        </div>
+
+        <!-- YouTube Videos Section -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">סרטונים נבחרים מערוץ היוטיוב שלי</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="videosContainer">
+                <!-- Videos will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- JSON Editor Modal -->
+    <div id="jsonEditorModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col">
+            <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="text-lg font-semibold">עריכת הכלים ב-JSON</h3>
+                <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6 flex-1 overflow-auto">
+                <div class="flex mb-4">
+                    <button id="showToolsBtn" class="px-4 py-2 bg-blue-600 text-white rounded-l-lg">כלים</button>
+                    <button id="showVideosBtn" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-r-lg">סרטונים</button>
+                </div>
+                <textarea id="jsonEditor" class="w-full h-96 p-4 border border-gray-300 rounded-lg font-mono text-sm spellcheck="false"></textarea>
+            </div>
+            <div class="px-6 py-4 border-t border-gray-200 flex justify-end space-x-3 space-x-reverse">
+                <button id="cancelEditBtn" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                    ביטול
+                </button>
+                <button id="saveJsonBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    שמור שינויים
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 py-6 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-600 mb-4 md:mb-0">
+                    © 2023 ארגז הכלים שלי ל-AI. כל הזכויות שמורות.
+                </div>
+                <div class="flex space-x-4 space-x-reverse">
+                    <a href="https://www.youtube.com/@SAGIBARON" target="_blank" class="text-gray-500 hover:text-red-600 transition">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/SAGI.BARON" target="_blank" class="text-gray-500 hover:text-blue-800 transition">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="http://www.linkedin.com/in/sagi-bar-on" target="_blank" class="text-gray-500 hover:text-blue-700 transition">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://chat.whatsapp.com/GPFASYBEA9CFGUMCVZ5RXP" target="_blank" class="text-gray-500 hover:text-green-600 transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        // DOM Elements
+        // DOM Elements (נשארים ללא שינוי - רק לרפרנס)
+        const toolsContainer = document.getElementById('toolsContainer');
+        const videosContainer = document.getElementById('videosContainer');
+        const searchInput = document.getElementById('searchInput');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const totalToolsElement = document.getElementById('totalTools');
+        const topRatedElement = document.getElementById('topRated');
+        const newToolsElement = document.getElementById('newTools');
+        const totalCategoriesElement = document.getElementById('totalCategories');
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const jsonEditorModal = document.getElementById('jsonEditorModal');
+        const jsonEditor = document.getElementById('jsonEditor');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const cancelEditBtn = document.getElementById('cancelEditBtn');
+        const saveJsonBtn = document.getElementById('saveJsonBtn');
+        const showToolsBtn = document.getElementById('showToolsBtn');
+        const showVideosBtn = document.getElementById('showVideosBtn');
+        // const editJsonBtn = document.getElementById('editJsonBtn'); // הלחצן מוסתר כרגע
+        // const editJsonBtnMobile = document.getElementById('editJsonBtnMobile'); // הלחצן מוסתר כרגע
+        const refreshBtn = document.getElementById('refreshBtn');
+        const refreshBtnMobile = document.getElementById('refreshBtnMobile');
+
+        // State
+        let currentCategory = 'all';
+        let currentSearchTerm = '';
+        let toolsData = { tools: [], videos: [] }; // Initialize empty
+
+        // Initialize - Make it async
+        async function init() {
+            await loadData(); // Wait for data to load
+            renderTools();
+            renderVideos(); // Call the specific renderVideos function
+            updateStats();
+            setupEventListeners();
+            // Set initial active filter button
+            const allFilterBtn = document.querySelector('.filter-btn[data-category="all"]');
+            if (allFilterBtn) {
+                 allFilterBtn.classList.add('active');
+            }
+        }
+
+        // Fetch default data from JSON files
+        async function fetchDefaultData() {
+            try {
+                const [toolsResponse, videosResponse] = await Promise.all([
+                    fetch('tools.json'),
+                    fetch('videos.json')
+                ]);
+
+                if (!toolsResponse.ok || !videosResponse.ok) {
+                   throw new Error(`HTTP error! status: ${toolsResponse.status} / ${videosResponse.status}`);
+                }
+
+                const [toolsArray, videosArray] = await Promise.all([
+                    toolsResponse.json(),
+                    videosResponse.json()
+                ]);
+
+                return { tools: toolsArray, videos: videosArray };
+            } catch (error) {
+                console.error("Failed to fetch default data:", error);
+                alert("שגיאה בטעינת נתוני ברירת המחדל. נסה לרענן את הדף.");
+                return { tools: [], videos: [] }; // Return empty structure on error
+            }
+        }
+
+        // Load data from localStorage or fetch default from JSON
+        async function loadData() {
+            const savedData = localStorage.getItem('aiToolsData');
+            if (savedData) {
+                try {
+                    toolsData = JSON.parse(savedData);
+                    // Basic validation: ensure it has tools and videos arrays
+                    if (!Array.isArray(toolsData.tools) || !Array.isArray(toolsData.videos)) {
+                        console.warn("Invalid data structure in localStorage. Fetching defaults.");
+                        toolsData = await fetchDefaultData();
+                        saveData(); // Save the fetched defaults
+                    }
+                } catch (e) {
+                    console.error("Error parsing data from localStorage:", e);
+                    toolsData = await fetchDefaultData(); // Fetch defaults if parsing fails
+                    saveData(); // Save the fetched defaults
+                }
+            } else {
+                toolsData = await fetchDefaultData(); // Fetch defaults if no saved data
+                saveData(); // Save the fetched defaults to localStorage
+            }
+        }
+
+        // Save data to localStorage
+        function saveData() {
+            try {
+                localStorage.setItem('aiToolsData', JSON.stringify(toolsData));
+            } catch (e) {
+                console.error("Error saving data to localStorage:", e);
+                alert("שגיאה בשמירת הנתונים. ייתכן שהאחסון המקומי מלא.");
+            }
+        }
+
+        // Render tools based on filters (Modified slightly for safety)
+        function renderTools() {
+            if (!toolsContainer || !toolsData || !Array.isArray(toolsData.tools)) {
+                 console.error("Cannot render tools: Missing container or invalid data.");
+                 return;
+            }
+            const filteredTools = filterTools();
+
+            toolsContainer.innerHTML = ''; // Clear previous tools
+
+            if (filteredTools.length === 0) {
+                toolsContainer.innerHTML = '<p class="text-center text-gray-500 col-span-full">לא נמצאו כלים התואמים את החיפוש או הסינון.</p>';
+            } else {
+                filteredTools.forEach(tool => {
+                    const toolCard = document.createElement('div');
+                    // Add relative positioning for potential future badges (like admin edit)
+                    toolCard.className = `relative tool-card bg-white rounded-lg shadow-sm border border-gray-100 p-6 transition duration-300 ${tool.isFeatured ? 'ring-2 ring-blue-500' : ''}`;
+
+                    toolCard.innerHTML = `
+                        <div class="flex items-start mb-4">
+                            <div class="p-3 rounded-lg ${getCategoryColor(tool.category)} text-white mr-4 flex-shrink-0">
+                                <i class="${tool.icon || 'fas fa-question-circle'} text-xl"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-semibold">${tool.name || 'שם לא ידוע'}</h3>
+                                <span class="text-xs px-2 py-1 rounded-full ${getCategoryBadgeColor(tool.category)}">${getCategoryName(tool.category || 'כללי')}</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4 text-sm min-h-[60px]">${tool.description || 'אין תיאור זמין.'}</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex">
+                                ${renderRatingStars(tool.rating || 0)}
+                            </div>
+                            ${tool.isNew ? '<span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">חדש!</span>' : ''}
+                        </div>
+                        <a href="${tool.url || '#'}" target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition ${!tool.url ? 'opacity-50 cursor-not-allowed' : ''}">
+                            <i class="fas fa-external-link-alt ml-2"></i> ${tool.url ? 'גישה לכלי' : 'אין קישור'}
+                        </a>
+                    `;
+
+                    toolsContainer.appendChild(toolCard);
+                });
+            }
+        }
+
+        // Helper to get YouTube ID (Keep as is)
+        function getYouTubeID(url) {
+            if (!url) return '';
+            const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([^?&\/\s]+)/);
+            return match ? match[1] : '';
+        }
+
+        // Render videos (Keep mostly as is, just ensure data source is correct)
+        function renderVideos() {
+            if (!videosContainer || !toolsData || !Array.isArray(toolsData.videos)) {
+                console.error("Cannot render videos: Missing container or invalid data.");
+                return; // Prevent errors if data isn't ready or invalid
+            }
+
+            videosContainer.innerHTML = ''; // Clear previous videos
+
+            if (toolsData.videos.length === 0) {
+                 videosContainer.innerHTML = '<p class="text-center text-gray-500 col-span-full">אין סרטונים להצגה.</p>';
+            } else {
+                toolsData.videos.forEach(video => {
+                    const videoId = getYouTubeID(video.url);
+                    // If we can't get an ID, maybe skip or show a placeholder? For now, generate embed URL anyway.
+                    const embedUrl = videoId ? `https://www.youtube.com/embed/${videoId}` : '#'; // Use '#' or a placeholder URL if ID is missing
+
+                    const videoCard = document.createElement('div');
+                    videoCard.className = 'bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden';
+
+                    videoCard.innerHTML = `
+                        <div class="relative pt-[56.25%] ${!videoId ? 'bg-gray-200 flex items-center justify-center' : ''}">
+                            ${videoId ? `
+                            <iframe class="absolute top-0 left-0 w-full h-full" src="${embedUrl}" frameborder="0"
+                                title="${video.title || 'YouTube video'}"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            ` : `
+                            <p class="text-gray-500 text-sm">קישור וידאו לא תקין</p>
+                            `}
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">${video.title || 'כותרת חסרה'}</h3>
+                            <p class="text-gray-600 text-sm mb-3 min-h-[40px]">${video.description || 'אין תיאור זמין.'}</p>
+                            <p class="text-gray-500 text-xs">${formatDate(video.date)}</p>
+                        </div>
+                    `;
+
+                    videosContainer.appendChild(videoCard);
+                });
+            }
+        }
+
+        // Filter tools (Modified slightly for safety)
+        function filterTools() {
+            if (!toolsData || !Array.isArray(toolsData.tools)) {
+                 return []; // Return empty array if data is not ready
+            }
+            return toolsData.tools.filter(tool => {
+                const nameMatch = tool.name && tool.name.toLowerCase().includes(currentSearchTerm.toLowerCase());
+                const descMatch = tool.description && tool.description.toLowerCase().includes(currentSearchTerm.toLowerCase());
+                const categoryMatch = tool.category && tool.category.toLowerCase().includes(currentSearchTerm.toLowerCase()); // Optional: search category name too
+                const matchesSearch = nameMatch || descMatch || categoryMatch;
+
+                const matchesCategoryFilter = currentCategory === 'all' || tool.category === currentCategory;
+
+                return matchesCategoryFilter && matchesSearch;
+            });
+        }
+
+        // Update statistics (Modified slightly for safety)
+        function updateStats() {
+            const toolsCount = (toolsData && Array.isArray(toolsData.tools)) ? toolsData.tools.length : 0;
+            totalToolsElement.textContent = toolsCount;
+
+            const topRatedCount = toolsCount > 0 ? toolsData.tools.filter(tool => tool.rating >= 4).length : 0;
+            topRatedElement.textContent = topRatedCount;
+
+            const newToolsCount = toolsCount > 0 ? toolsData.tools.filter(tool => tool.isNew).length : 0;
+            newToolsElement.textContent = newToolsCount;
+
+            const categories = toolsCount > 0 ? new Set(toolsData.tools.map(tool => tool.category)) : new Set();
+            totalCategoriesElement.textContent = categories.size;
+        }
+
+        // Render rating stars (Keep as is)
+        function renderRatingStars(rating) {
+             let stars = '';
+             const filledStars = Math.max(0, Math.min(5, Math.round(rating || 0))); // Ensure rating is between 0 and 5
+             for (let i = 1; i <= 5; i++) {
+                 if (i <= filledStars) {
+                     stars += '<i class="fas fa-star text-yellow-400"></i>';
+                 } else {
+                     stars += '<i class="far fa-star text-gray-300"></i>'; // Use gray for empty stars
+                 }
+             }
+             return stars;
+        }
+
+        // Get category name (Keep as is, maybe add a default)
+        function getCategoryName(category) {
+            const categories = {
+                'productivity': 'פרודוקטיביות',
+                'writing': 'כתיבה',
+                'design': 'עיצוב',
+                'coding': 'תכנות',
+                'video': 'וידאו',
+                'image': 'תמונה',
+                'education': 'חינוך',
+                'data': 'נתונים',
+                'search': 'חיפוש',
+                'builder': 'בנייה',
+                'customer-support': 'תמיכה',
+                'automation': 'אוטומציה',
+                'hosting': 'אחסון',
+                'agents': 'סוכנים',
+                'directory': 'אינדקס',
+                'utility': 'כלי עזר',
+                'platform': 'פלטפורמה',
+                'media': 'מדיה',
+                'presentation': 'מצגות',
+                'audio': 'שמע',
+                'infrastructure': 'תשתיות',
+                'nlp': 'עיבוד שפה',
+                'accessibility': 'נגישות'
+                // Add other categories from your JSON here
+            };
+            return categories[category] || category || 'כללי'; // Return category key or 'כללי' if null/undefined
+        }
+
+        // Get category color (Add more colors or a default)
+        function getCategoryColor(category) {
+            const colors = {
+                'productivity': 'bg-blue-600',
+                'writing': 'bg-purple-600',
+                'design': 'bg-pink-600',
+                'coding': 'bg-green-600',
+                'video': 'bg-red-600',
+                'image': 'bg-yellow-600',
+                'education': 'bg-indigo-600',
+                'data': 'bg-cyan-600',
+                'search': 'bg-teal-600',
+                'builder': 'bg-orange-600',
+                'customer-support': 'bg-lime-600',
+                'automation': 'bg-sky-600',
+                'hosting': 'bg-amber-600',
+                'agents': 'bg-violet-600',
+                'directory': 'bg-fuchsia-600',
+                'utility': 'bg-rose-600',
+                'platform': 'bg-emerald-600',
+                'media': 'bg-stone-600',
+                'presentation': 'bg-red-500',
+                'audio': 'bg-blue-500',
+                'infrastructure': 'bg-gray-700',
+                'nlp': 'bg-purple-500',
+                'accessibility': 'bg-green-500'
+                // Add more as needed
+            };
+            return colors[category] || 'bg-gray-600'; // Default color
+        }
+
+        // Get category badge color (Add more or a default)
+        function getCategoryBadgeColor(category) {
+            const colors = {
+                'productivity': 'bg-blue-100 text-blue-800',
+                'writing': 'bg-purple-100 text-purple-800',
+                'design': 'bg-pink-100 text-pink-800',
+                'coding': 'bg-green-100 text-green-800',
+                'video': 'bg-red-100 text-red-800',
+                'image': 'bg-yellow-100 text-yellow-800',
+                'education': 'bg-indigo-100 text-indigo-800',
+                'data': 'bg-cyan-100 text-cyan-800',
+                'search': 'bg-teal-100 text-teal-800',
+                'builder': 'bg-orange-100 text-orange-800',
+                'customer-support': 'bg-lime-100 text-lime-800',
+                'automation': 'bg-sky-100 text-sky-800',
+                'hosting': 'bg-amber-100 text-amber-800',
+                'agents': 'bg-violet-100 text-violet-800',
+                'directory': 'bg-fuchsia-100 text-fuchsia-800',
+                'utility': 'bg-rose-100 text-rose-800',
+                'platform': 'bg-emerald-100 text-emerald-800',
+                'media': 'bg-stone-100 text-stone-800',
+                'presentation': 'bg-red-100 text-red-800',
+                'audio': 'bg-blue-100 text-blue-800',
+                'infrastructure': 'bg-gray-200 text-gray-800',
+                'nlp': 'bg-purple-100 text-purple-800',
+                'accessibility': 'bg-green-100 text-green-800'
+                 // Add more as needed
+            };
+            return colors[category] || 'bg-gray-100 text-gray-800'; // Default badge color
+        }
+
+        // Format date (Keep as is, maybe add error handling)
+        function formatDate(dateString) {
+            if (!dateString) return 'תאריך לא זמין';
+            try {
+                // Handle potential non-standard date formats if necessary
+                const date = new Date(dateString);
+                 // Check if date is valid
+                 if (isNaN(date.getTime())) {
+                     return 'תאריך לא תקין';
+                 }
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return date.toLocaleDateString('he-IL', options);
+            } catch (e) {
+                console.error("Error formatting date:", dateString, e);
+                return 'תאריך לא תקין';
+            }
+        }
+
+
+        // Setup event listeners (Update refresh button logic)
+        function setupEventListeners() {
+            // Search input
+            searchInput.addEventListener('input', (e) => {
+                currentSearchTerm = e.target.value;
+                renderTools();
+            });
+
+            // Filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    currentCategory = button.dataset.category;
+                    renderTools();
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+
+            // JSON Editor Modal (Keep as is, but consider removing buttons if not admin)
+             const openEditorHandler = () => {
+                // Default to showing tools first
+                showToolsBtn.click(); // Simulate click to set initial state
+                jsonEditorModal.classList.remove('hidden');
+             };
+
+            // If Edit buttons exist, add listeners
+            // const editJsonBtn = document.getElementById('editJsonBtn');
+            // const editJsonBtnMobile = document.getElementById('editJsonBtnMobile');
+            // if (editJsonBtn) editJsonBtn.addEventListener('click', openEditorHandler);
+            // if (editJsonBtnMobile) editJsonBtnMobile.addEventListener('click', openEditorHandler);
+
+            closeModalBtn.addEventListener('click', () => {
+                jsonEditorModal.classList.add('hidden');
+            });
+
+            cancelEditBtn.addEventListener('click', () => {
+                jsonEditorModal.classList.add('hidden');
+            });
+
+            saveJsonBtn.addEventListener('click', () => {
+                try {
+                    const newData = JSON.parse(jsonEditor.value);
+                    if (showToolsBtn.classList.contains('bg-blue-600')) {
+                        if (!Array.isArray(newData)) throw new Error("Data must be an array.");
+                        toolsData.tools = newData;
+                    } else {
+                         if (!Array.isArray(newData)) throw new Error("Data must be an array.");
+                        toolsData.videos = newData;
+                    }
+                    saveData(); // Save changes to localStorage
+                    renderTools();
+                    renderVideos(); // Re-render videos as well
+                    updateStats();
+                    jsonEditorModal.classList.add('hidden');
+                    alert("הנתונים נשמרו בהצלחה (באחסון המקומי).");
+                } catch (e) {
+                    alert('JSON לא תקין: ' + e.message);
+                }
+            });
+
+            showToolsBtn.addEventListener('click', () => {
+                showToolsBtn.classList.add('bg-blue-600', 'text-white');
+                showToolsBtn.classList.remove('bg-gray-200', 'text-gray-700');
+                showVideosBtn.classList.add('bg-gray-200', 'text-gray-700');
+                showVideosBtn.classList.remove('bg-blue-600', 'text-white');
+                jsonEditor.value = JSON.stringify(toolsData.tools, null, 2);
+            });
+
+            showVideosBtn.addEventListener('click', () => {
+                showVideosBtn.classList.add('bg-blue-600', 'text-white');
+                showVideosBtn.classList.remove('bg-gray-200', 'text-gray-700');
+                showToolsBtn.classList.add('bg-gray-200', 'text-gray-700');
+                showToolsBtn.classList.remove('bg-blue-600', 'text-white');
+                jsonEditor.value = JSON.stringify(toolsData.videos, null, 2);
+            });
+
+            // Refresh buttons - Load default data from JSON files
+            const refreshHandler = async () => {
+                if (confirm("פעולה זו תחליף את כל הנתונים הנוכחיים (כולל שינויים שביצעת בעורך) בנתוני ברירת המחדל. האם להמשיך?")) {
+                    console.log("Refreshing data from default JSON files...");
+                    toolsData = await fetchDefaultData(); // Fetch the defaults
+                    saveData(); // Overwrite localStorage with defaults
+                    renderTools();
+                    renderVideos();
+                    updateStats();
+                    // Reset filters and search
+                    searchInput.value = '';
+                    currentSearchTerm = '';
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                     const allFilterBtn = document.querySelector('.filter-btn[data-category="all"]');
+                     if (allFilterBtn) {
+                         allFilterBtn.classList.add('active');
+                     }
+                    currentCategory = 'all';
+                    renderTools(); // Render again with reset filters
+                    alert("הנתונים רועננו לערכי ברירת המחדל.");
+                }
+            };
+
+            refreshBtn.addEventListener('click', refreshHandler);
+            refreshBtnMobile.addEventListener('click', refreshHandler);
+        }
+
+        // Initialize the app when the DOM is ready
+        document.addEventListener('DOMContentLoaded', init);
+
+        // --- Keep the separate getYouTubeID and renderVideos for DOMContentLoaded if needed ---
+        // Although the main init() now calls renderVideos after data loading,
+        // keeping this might be a fallback or part of the original structure you wanted.
+        // It's slightly redundant now if init() works correctly.
+        /*
+        function getYouTubeID(url) { // Already defined above, potentially remove this duplicate
+            const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([^?&\/\s]+)/);
+            return match ? match[1] : '';
+        }
+
+        function renderVideos() { // Already defined above, potentially remove this duplicate
+             // ... (implementation is identical to the one inside the main script block) ...
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            // This might run before init() finishes loading data if init is slow.
+            // It's safer to rely on init() calling renderVideos.
+            // renderVideos();
+        });
+        */
+
+    </script>
+</body>
+</html>
