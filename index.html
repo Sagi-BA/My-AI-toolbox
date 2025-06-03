@@ -1,936 +1,2154 @@
-
 <!-- 
- https://huggingface.co/spaces/theWitcher/sagi-ai-tools
- https://huggingface.co/spaces/theWitcher/sagi-ai-tools/blob/main/index.html 
- 
- -->
+https://thewitcher-sagi-ai-tools.static.hf.space/index.html
+https://huggingface.co/spaces/theWitcher/sagi-ai-tools 
+
+https://chatgpt.com/c/67efa5ae-ab80-8005-a7d4-de3ced6ccec4
+
+https://bit.ly/a-tools
+sagi test
+-->
 
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html dir="rtl" lang="he">
+  <head>
+    <link rel="icon" href="/favicon-32x32.png" type="image/x-icon" sizes="32x32"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="הכירו את ארגז הכלים של שגיא בר און">
+    <meta property="og:description" content="כנסו עכשיו לכלי המדהים שלנו!">
+    <meta property="og:image" content="https://thewitcher-sagi-ai-tools.static.hf.space/sagi_ai_toolbox.png">
+    <meta property="og:url" content="https://thewitcher-sagi-ai-tools.static.hf.space">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <title>ארגז הכלים שלי לבינה מלאכותית</title>
-    <script src="https://cdn.tailwindcss.com">
-function getYouTubeID(url) {
-    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([^?&\/\s]+)/);
-    return match ? match[1] : '';
-}
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
 
-function renderVideos() {
-    const videosContainer = document.getElementById('videosContainer');
-    if (!videosContainer) return;
-
-    videosContainer.innerHTML = '';
-
-    toolsData.videos.forEach(video => {
-        const videoId = getYouTubeID(video.url);
-        const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-
-        const videoCard = document.createElement('div');
-        videoCard.className = 'bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden';
-
-        videoCard.innerHTML = `
-            <div class="relative pt-[56.25%]">
-                <iframe class="absolute top-0 left-0 w-full h-full" src="${embedUrl}" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="p-4">
-                <h3 class="text-lg font-semibold mb-2">${video.title}</h3>
-                <p class="text-gray-600 text-sm mb-3">${video.description}</p>
-                <p class="text-gray-500 text-xs">${formatDate(video.date)}</p>
-            </div>
-        `;
-
-        videosContainer.appendChild(videoCard);
-    });
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    renderVideos();
-});
-
-</script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Arimo', sans-serif;
-            background-color: #f9fafb;
-        }
-        
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .category-filter .active {
-            background-color: #3b82f6;
-            color: white;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        /* RTL specific styles */
-        [dir="rtl"] .rotate-180 {
-            transform: rotate(180deg);
-        }
-        
-        /* Mobile menu styles */
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        
-        .mobile-menu.open {
-            max-height: 500px;
-        }
-        
-        /* Admin badge */
-        .admin-badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: #ef4444;
-            color: white;
-            border-radius: 9999px;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-        }
+      @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap');
 
-        /* Futuristic profile image */
-        .profile-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-        }
+      body {
+        font-family: 'Arimo', sans-serif;
+        background-color: #f9fafb;
+      }
 
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #3b82f6;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-            position: relative;
-            z-index: 2;
-        }
+      .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
 
-        .tech-circle {
-            position: absolute;
-            border-radius: 50%;
-            border: 2px solid rgba(59, 130, 246, 0.7);
-            animation: rotate infinite linear;
-        }
+      .category-filter .active {
+        background-color: #3b82f6;
+        color: white;
+      }
 
-        .tech-circle-1 {
-            width: 220px;
-            height: 220px;
-            top: -10px;
-            left: -10px;
-            animation-duration: 15s;
-            border-style: dashed;
-        }
+      .gradient-text {
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
 
-        .tech-circle-2 {
-            width: 240px;
-            height: 240px;
-            top: -20px;
-            left: -20px;
-            animation-duration: 20s;
-            animation-direction: reverse;
-        }
+      /* RTL specific styles */
+      [dir='rtl'] .rotate-180 {
+        transform: rotate(180deg);
+      }
 
-        .tech-circle-3 {
-            width: 260px;
-            height: 260px;
-            top: -30px;
-            left: -30px;
-            animation-duration: 25s;
-            border-style: dotted;
-        }
+      /* Mobile menu styles */
+      .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
+      .mobile-menu.open {
+        max-height: 500px;
+      }
+      .share-btn.yt { color:#FF0000; }   /* YouTube */
+      /* (אפשרי) ריווח עדין בין כוכבים */
+      .rating-stars { gap:4px; }   /* class חדשה אם תרצה */
 
-        .tech-dots {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            z-index: 1;
-        }
+      /* Admin badge */
+      .admin-badge {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: #ef4444;
+        color: white;
+        border-radius: 9999px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+      }
 
-        .tech-dot {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background-color: #8b5cf6;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-        }
+      /* Futuristic profile image */
+      .profile-container {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+      }
 
-        /* Futuristic AI elements */
-        .ai-particle {
-            position: absolute;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            border-radius: 50%;
-            opacity: 0.6;
-            filter: blur(10px);
-            z-index: 0;
-        }
+      .profile-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #3b82f6;
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        position: relative;
+        z-index: 2;
+      }
 
-        .ai-circuit {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at center, transparent 0%, #f9fafb 100%),
-                linear-gradient(90deg, transparent 49%, rgba(59, 130, 246, 0.1) 50%, transparent 51%),
-                linear-gradient(0deg, transparent 49%, rgba(59, 130, 246, 0.1) 50%, transparent 51%);
-            background-size: 20px 20px;
-            border-radius: 50%;
-            opacity: 0.3;
+      .tech-circle {
+        position: absolute;
+        border-radius: 50%;
+        border: 2px solid rgba(59, 130, 246, 0.7);
+        animation: rotate infinite linear;
+      }
+
+      .tech-circle-1 {
+        width: 220px;
+        height: 220px;
+        top: -10px;
+        left: -10px;
+        animation-duration: 15s;
+        border-style: dashed;
+      }
+
+      .tech-circle-2 {
+        width: 240px;
+        height: 240px;
+        top: -20px;
+        left: -20px;
+        animation-duration: 20s;
+        animation-direction: reverse;
+      }
+
+      .tech-circle-3 {
+        width: 260px;
+        height: 260px;
+        top: -30px;
+        left: -30px;
+        animation-duration: 25s;
+        border-style: dotted;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
         }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @media (min-width: 768px) {     /* מסכים רחבים */
+        .share-btn {
+          width: 48px;
+          height: 48px;
+          font-size: 24px;
+        }
+      }
+
+      .tech-dots {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .tech-dot {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: #8b5cf6;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Futuristic AI elements */
+      .ai-particle {
+        position: absolute;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        border-radius: 50%;
+        opacity: 0.6;
+        filter: blur(10px);
+        z-index: 0;
+      }
+
+      .ai-circuit {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+            circle at center,
+            transparent 0%,
+            #f9fafb 100%
+          ),
+          linear-gradient(
+            90deg,
+            transparent 49%,
+            rgba(59, 130, 246, 0.1) 50%,
+            transparent 51%
+          ),
+          linear-gradient(
+            0deg,
+            transparent 49%,
+            rgba(59, 130, 246, 0.1) 50%,
+            transparent 51%
+          );
+        background-size: 20px 20px;
+        border-radius: 50%;
+        opacity: 0.3;
+      }
+      /* Added cursor style for clickable stats */
+      .clickable-stat:hover {
+        cursor: pointer;
+        background-color: #f3f4f6; /* Slightly lighter gray on hover */
+      }
+      /* === עיצוב חדש לכפתורי השיתוף === */
+      .share-buttons {
+        display: flex;
+        justify-content: center;   /* כפתורים בשורה אחת במרכז */
+        gap: 24px;                 /* רווח נדיב בין כפתורים */
+        margin-top: 32px;          /* קצת אוויר מלמעלה */
+      }
+      /* === ריבועים גדולים וברורים === */
+      .share-btn{
+        width:40px;height:40px;
+        font-size:22px;                /* גודל האייקון */
+        color:#fff;                    /* צבע האייקון */
+        background:currentColor;       /* צבע הרקע = צבע הכפתור */
+        border:none;border-radius:12px;
+        display:flex;align-items:center;justify-content:center;
+        box-shadow:0 4px 12px rgba(0,0,0,.08);
+        transition:transform .2s,filter .2s;
+      }
+      .share-btn:hover{transform:translateY(-4px);filter:brightness(1.12);}
+      .share-btn i{color:#fff;}         /* האייקון תמיד לבן */
+
+      /* צבע מותג לכל פלטפורמה */
+      .share-btn.wa{color:#25D366;}     /* WhatsApp */
+      .share-btn.fb{color:#1877F2;}     /* Facebook */
+      .share-btn.tw{color:#1DA1F2;}     /* Twitter/X */
+      .share-btn.cp{color:#64748b;}     /* Copy-link / ברירת מחדל */
+
+      .share-btn img {
+        width: 32px;
+        height: 32px;
+      }
+
+      @media (max-width: 768px) {
+        .favorite-btn {
+          
+          right: 10px; /* Adjust the right position */
+          top: 10px; /* Adjust the top position */
+        }
+      }
+
+      .tool-header {
+        display: flex;
+        flex-direction: column; /* Stack title and logo vertically */
+        align-items: center; /* Center align */
+        margin-bottom: 10px; /* Space below the header */
+      }
+
+      .tool-logo {
+        width: 50px; /* Adjust size as needed */
+        height: 50px; /* Adjust size as needed */
+      }
+
+      .tool-name {
+        font-size: 1.5rem; /* Adjust font size as needed */
+        font-weight: bold; /* Make it bold */
+        text-align: center; /* Center align text */
+      }
+
+      .category-chip {
+        background: linear-gradient(90deg, #f3f4f6 60%, #e0e7ff 100%);
+        color: #3730a3;
+        border: 1px solid #a5b4fc;
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.07);
+        transition: background 0.2s;
+      }
+      .category-chip i {
+        color: #6366f1;
+      }
+
     </style>
-</head>
-<body class="min-h-screen">
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-40">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <!-- Mobile menu button -->
-                    <button id="mobileMenuButton" class="md:hidden text-gray-600 mr-4">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                    
-                    <div>
-                        <h1 class="text-2xl md:text-3xl font-bold gradient-text">ארגז הכלים שלי ל-AI</h1>
-                        <p class="text-gray-600 text-sm md:text-base mt-1">אוסף כלי הבינה המלאכותית המומלצים שלי</p>
-                    </div>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-4 space-x-reverse">
-                    <button id="refreshBtn" class="px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition">
-                        <i class="fas fa-sync-alt ml-2"></i> רענן
-                    </button>
-                    <!-- <button id="editJsonBtn" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition relative">
-                        <i class="fas fa-edit ml-2"></i> ערוך JSON
-                        <span class="admin-badge">A</span>
-                    </button> -->
-                </div>
-            </div>
-            
-            <!-- Mobile menu -->
-            <div id="mobileMenu" class="mobile-menu md:hidden mt-4">
-                <div class="flex flex-col space-y-2 py-2">
-                    <button id="refreshBtnMobile" class="px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition text-right">
-                        <i class="fas fa-sync-alt ml-2"></i> רענן
-                    </button>
-                    <button id="editJsonBtnMobile" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition text-right relative">
-                        <i class="fas fa-edit ml-2"></i> ערוך JSON
-                        <span class="admin-badge">A</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JVF8N1DVSG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <!-- About Me Section - Moved to the top -->
-        <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100 mb-8 relative overflow-hidden">
-            <!-- AI Particles Background -->
-            <div class="ai-particle" style="width: 100px; height: 100px; top: -30px; right: -30px;"></div>
-            <div class="ai-particle" style="width: 150px; height: 150px; bottom: -50px; left: -50px;"></div>
-            <div class="ai-particle" style="width: 80px; height: 80px; top: 50%; right: 20%;"></div>
-            
-            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">קצת עליי</h2>
-            <div class="flex flex-col md:flex-row gap-6">
-                <div class="md:w-1/3">
-                    <div class="profile-container">
-                        <!-- AI Circuit Background -->
-                        <div class="ai-circuit"></div>
-                        
-                        <!-- Tech circles -->
-                        <div class="tech-circle tech-circle-1"></div>
-                        <div class="tech-circle tech-circle-2"></div>
-                        <div class="tech-circle tech-circle-3"></div>
-                        
-                        <!-- Tech dots -->
-                        <div class="tech-dots">
-                            <div class="tech-dot" style="top: 10%; left: 50%;"></div>
-                            <div class="tech-dot" style="top: 50%; left: 10%;"></div>
-                            <div class="tech-dot" style="top: 90%; left: 50%;"></div>
-                            <div class="tech-dot" style="top: 50%; left: 90%;"></div>
-                            <div class="tech-dot" style="top: 30%; left: 30%;"></div>
-                            <div class="tech-dot" style="top: 70%; left: 70%;"></div>
-                            <div class="tech-dot" style="top: 30%; left: 70%;"></div>
-                            <div class="tech-dot" style="top: 70%; left: 30%;"></div>
-                        </div>
-                        
-                        <!-- Profile image -->
-                        <img src="https://i.imgur.com/cnlxCuj.jpeg" alt="שגיא בר און" class="profile-image">
-                    </div>
-                </div>
-                <div class="md:w-2/3">
-                    <h3 class="text-xl font-semibold mb-4">שגיא בר און</h3>
-                    <p class="text-gray-700 mb-4">
-                        אני חוקר ויועץ בתחום הבינה המלאכותית, מאסטר NLP, ובעל ניסיון של למעלה מ-25 שנה בתעשיית ההייטק. בעל מומחיות רחבה בפיתוח תוכנה, אוטומציה, ניהול פרויקטים ואסטרטגיה עסקית.
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        מרצה אורח באוניברסיטת רייכמן וחבר בסגל הבוחנים של מה"ט - המכון הממשלתי להכשרה בטכנולוגיה ובמדע - לבחינות מהנדסי תוכנה באוניברסיטאות ובמכללות, וכן מנטור לAI במסגרת משרד החינוך.
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        בעל תואר שני במנהל עסקים עם התמחות בבינה מלאכותית, תואר ראשון (BSc) במדעי המחשב והנדסאי תוכנה. ההרצאות משלבות ידע עדכני, חשיבה ביקורתית והתנסות חווייתית, מתוך מטרה להעצים אנשים ולאפשר להם להשתמש בטכנולוגיה בחוכמה ובקלות.
-                    </p>
-                    <p class="text-gray-700">
-                        שמתי לי למטרה להנגיש, להסביר ולחבר את הטכנולוגיה בצורה פשוטה וברורה לכולם.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Search and Filters -->
-        <div class="mb-8">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div class="relative w-full md:w-96">
-                    <input type="text" id="searchInput" placeholder="חפש כלים..." class="w-full pr-10 pl-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
-                    <i class="fas fa-search absolute right-3 top-3.5 text-gray-400"></i>
-                </div>
-                
-                <div class="flex items-center space-x-2 space-x-reverse">
-                    <span class="text-gray-600 hidden md:block">סנן לפי:</span>
-                    <div class="category-filter flex flex-wrap gap-2">
-                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="all">הכל</button>
-                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="productivity">פרודוקטיביות</button>
-                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="writing">כתיבה</button>
-                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="design">עיצוב</button>
-                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="coding">תכנות</button>
-                        <button class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition" data-category="video">וידאו</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                <div class="flex items-center">
-                    <div class="p-3 rounded-full bg-blue-50 text-blue-600 ml-3">
-                        <i class="fas fa-tools text-lg"></i>
-                    </div>
-                    <div>
-                        <p class="text-gray-500 text-sm">סה"כ כלים</p>
-                        <h3 class="text-xl font-semibold" id="totalTools">0</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                <div class="flex items-center">
-                    <div class="p-3 rounded-full bg-purple-50 text-purple-600 ml-3">
-                        <i class="fas fa-star text-lg"></i>
-                    </div>
-                    <div>
-                        <p class="text-gray-500 text-sm">מובילים בדירוג</p>
-                        <h3 class="text-xl font-semibold" id="topRated">0</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                <div class="flex items-center">
-                    <div class="p-3 rounded-full bg-green-50 text-green-600 ml-3">
-                        <i class="fas fa-bolt text-lg"></i>
-                    </div>
-                    <div>
-                        <p class="text-gray-500 text-sm">חדשים השבוע</p>
-                        <h3 class="text-xl font-semibold" id="newTools">0</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                <div class="flex items-center">
-                    <div class="p-3 rounded-full bg-yellow-50 text-yellow-600 ml-3">
-                        <i class="fas fa-tags text-lg"></i>
-                    </div>
-                    <div>
-                        <p class="text-gray-500 text-sm">קטגוריות</p>
-                        <h3 class="text-xl font-semibold" id="totalCategories">0</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Tools Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="toolsContainer">
-            <!-- Tools will be loaded here -->
-        </div>
-
-        <!-- YouTube Videos Section -->
-        <div class="mt-16">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">סרטונים נבחרים מערוץ היוטיוב שלי</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="videosContainer">
-                <!-- Videos will be loaded here -->
-            </div>
-        </div>
-    </main>
-
-    <!-- JSON Editor Modal -->
-    <div id="jsonEditorModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col">
-            <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
-                <h3 class="text-lg font-semibold">עריכת הכלים ב-JSON</h3>
-                <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="p-6 flex-1 overflow-auto">
-                <div class="flex mb-4">
-                    <button id="showToolsBtn" class="px-4 py-2 bg-blue-600 text-white rounded-l-lg">כלים</button>
-                    <button id="showVideosBtn" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-r-lg">סרטונים</button>
-                </div>
-                <textarea id="jsonEditor" class="w-full h-96 p-4 border border-gray-300 rounded-lg font-mono text-sm spellcheck="false"></textarea>
-            </div>
-            <div class="px-6 py-4 border-t border-gray-200 flex justify-end space-x-3 space-x-reverse">
-                <button id="cancelEditBtn" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
-                    ביטול
-                </button>
-                <button id="saveJsonBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                    שמור שינויים
-                </button>
-            </div>
-        </div>
+      gtag('config', 'G-JVF8N1DVSG');
+    </script>
+    <link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png" />
+    <link href="manifest.json" rel="manifest" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="AI Tools" name="apple-mobile-web-app-title" />
+    <link href="icon-192.png" rel="apple-touch-icon" />
+    <meta content="#3b82f6" name="theme-color" />
+  </head>
+  <body class="min-h-screen">
+    <div
+      id="newToolBanner"
+      class="hidden bg-green-100 text-green-800 text-center py-2 text-sm font-semibold"
+    >
+      🎉 התווסף כלי חדש: <span id="newToolName"></span> –
+      <a href="#toolsContainer" class="underline">צפו עכשיו</a>
+      <button id="closeBanner" class="ml-4 text-green-800 font-bold">×</button>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-100 border-t border-gray-200 py-6 mt-16">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-gray-600 mb-4 md:mb-0">
-                    © 2023 ארגז הכלים שלי ל-AI. כל הזכויות שמורות.
-                </div>
-                <div class="flex space-x-4 space-x-reverse">
-                    <a href="https://www.youtube.com/@SAGIBARON" target="_blank" class="text-gray-500 hover:text-red-600 transition">
-                        <i class="fab fa-youtube text-xl"></i>
-                    </a>
-                    <a href="https://www.facebook.com/SAGI.BARON" target="_blank" class="text-gray-500 hover:text-blue-800 transition">
-                        <i class="fab fa-facebook text-xl"></i>
-                    </a>
-                    <a href="http://www.linkedin.com/in/sagi-bar-on" target="_blank" class="text-gray-500 hover:text-blue-700 transition">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="https://chat.whatsapp.com/GPFASYBEA9CFGUMCVZ5RXP" target="_blank" class="text-gray-500 hover:text-green-600 transition">
-                        <i class="fab fa-whatsapp text-xl"></i>
-                    </a>
-                </div>
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 backdrop-blur-md bg-white/80 shadow-md border-b border-gray-200"
+    >
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <!-- Mobile menu button -->
+            <button id="mobileMenuButton" class="md:hidden text-gray-600 mr-4">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <div>
+              <h1 class="text-2xl md:text-3xl font-bold gradient-text">
+                ארגז הכלים שלי ל-AI
+              </h1>
+              <p class="text-gray-600 text-sm md:text-base mt-1">
+                אוסף כלי הבינה המלאכותית המומלצים שלי
+              </p>
             </div>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-4 space-x-reverse">
+            <!-- /* --- Refresh Button - Still useful for resetting filters/sort --- */ -->
+            <button
+              id="refreshBtn"
+              class="px-5 py-2 rounded-xl bg-gradient-to-l from-blue-600 to-indigo-500 text-white shadow-md hover:shadow-lg hover:from-blue-700 hover:to-indigo-600 transition-all duration-300"
+            >
+              <i class="fas fa-sync-alt ml-2"></i> אפס תצוגה
+            </button>
+
+            <!-- /* --- Admin Edit Button - Uncomment if needed --- */ -->
+            <button
+              id="editJsonBtn"
+              class="px-5 py-2 rounded-xl bg-gradient-to-l from-pink-500 to-purple-600 text-white shadow-md hover:shadow-lg hover:from-pink-600 hover:to-purple-700 transition-all duration-300 relative"
+            >
+              <i class="fas fa-edit ml-2"></i> הציעו כלי חדש
+              <span class="admin-badge">N</span>
+            </button>
+          </div>
         </div>
+
+        <!-- /* --- Mobile menu --- */ -->
+        <div id="mobileMenu" class="mobile-menu md:hidden mt-4">
+          <div class="flex flex-col space-y-2 py-2">
+            <button
+              id="refreshBtnMobile"
+              class="px-5 py-2 rounded-xl bg-gradient-to-l from-blue-600 to-indigo-500 text-white shadow-md hover:shadow-lg hover:from-blue-700 hover:to-indigo-600 transition-all duration-300"
+            >
+              <i class="fas fa-sync-alt ml-2"></i> אפס תצוגה
+            </button>
+            <!-- /* --- Admin Edit Button (Mobile) - Uncomment if needed --- */ -->
+            <button
+              id="editJsonBtn"
+              class="px-5 py-2 rounded-xl bg-gradient-to-l from-pink-500 to-purple-600 text-white shadow-md hover:shadow-lg hover:from-pink-600 hover:to-purple-700 transition-all duration-300 relative"
+            >
+              <i class="fas fa-edit ml-2"></i> הציעו כלי חדש
+              <span class="admin-badge">N</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- /* --- Main Content --- */ -->
+    <main class="container mx-auto px-4 py-8">
+      <!-- /* --- About Me Section --- */ -->
+      <div
+        class="bg-white rounded-lg shadow-sm p-6 border border-gray-100 mb-8 relative overflow-hidden"
+      >
+        <!-- /* ... (content unchanged) ... */ -->
+        <div
+          class="ai-particle"
+          style="width: 100px; height: 100px; top: -30px; right: -30px"
+        ></div>
+        <div
+          class="ai-particle"
+          style="width: 150px; height: 150px; bottom: -50px; left: -50px"
+        ></div>
+        <div
+          class="ai-particle"
+          style="width: 80px; height: 80px; top: 50%; right: 20%"
+        ></div>
+
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">
+          קצת עליי
+        </h2>
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="md:w-1/3">
+            <div class="profile-container">
+              <div class="ai-circuit"></div>
+              <div class="tech-circle tech-circle-1"></div>
+              <div class="tech-circle tech-circle-2"></div>
+              <div class="tech-circle tech-circle-3"></div>
+              <div class="tech-dots">
+                <div class="tech-dot" style="top: 10%; left: 50%"></div>
+                <div class="tech-dot" style="top: 50%; left: 10%"></div>
+                <div class="tech-dot" style="top: 90%; left: 50%"></div>
+                <div class="tech-dot" style="top: 50%; left: 90%"></div>
+                <div class="tech-dot" style="top: 30%; left: 30%"></div>
+                <div class="tech-dot" style="top: 70%; left: 70%"></div>
+                <div class="tech-dot" style="top: 30%; left: 70%"></div>
+                <div class="tech-dot" style="top: 70%; left: 30%"></div>
+              </div>
+              <img
+                src="https://i.imgur.com/cnlxCuj.jpeg"
+                alt="שגיא בר און"
+                class="profile-image"
+              />
+            </div>
+          </div>
+          <div class="md:w-2/3">
+            <h3 class="text-xl font-semibold mb-4">שגיא בר און</h3>
+            <p class="text-gray-700 mb-4">
+              אני חוקר ויועץ בתחום הבינה המלאכותית, מאסטר NLP, ובעל ניסיון של
+              למעלה מ-25 שנה בתעשיית ההייטק. בעל מומחיות רחבה בפיתוח תוכנה,
+              אוטומציה, ניהול פרויקטים ואסטרטגיה עסקית.
+            </p>
+            <p class="text-gray-700 mb-4">
+              מרצה אורח באוניברסיטת רייכמן וחבר בסגל הבוחנים של מה"ט - המכון
+              הממשלתי להכשרה בטכנולוגיה ובמדע - לבחינות מהנדסי תוכנה
+              באוניברסיטאות ובמכללות, וכן מנטור לAI במסגרת משרד החינוך.
+            </p>
+            <p class="text-gray-700 mb-4">
+              בעל תואר שני במנהל עסקים עם התמחות בבינה מלאכותית, תואר ראשון
+              (BSc) במדעי המחשב והנדסאי תוכנה. ההרצאות משלבות ידע עדכני, חשיבה
+              ביקורתית והתנסות חווייתית, מתוך מטרה להעצים אנשים ולאפשר להם
+              להשתמש בטכנולוגיה בחוכמה ובקלות.
+            </p>
+            <p class="text-gray-700">
+              שמתי לי למטרה להנגיש, להסביר ולחבר את הטכנולוגיה בצורה פשוטה
+              וברורה לכולם.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- /* --- Search and Filters --- */ -->
+      <div class="mb-8">
+        <!-- /* ... (content unchanged) ... */ -->
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <div class="relative w-full md:w-96">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="חפש כלים..."
+              class="w-full pr-10 pl-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+            />
+            <i class="fas fa-search absolute right-3 top-3.5 text-gray-400"></i>
+          </div>
+          <div class="flex items-center space-x-2 space-x-reverse">
+            <span class="text-gray-600 hidden md:block">סנן לפי:</span>
+            <div class="category-filter flex flex-wrap gap-2">
+              <button
+                class="filter-btn px-3 py-1 rounded-full border text-sm transition border-gray-300 text-gray-700 bg-white hover:bg-blue-50"
+                data-category="all"
+              >
+                הכל
+              </button>
+              <button
+                class="filter-btn px-3 py-1 rounded-full border text-sm transition border-yellow-400 text-yellow-700 bg-yellow-100 hover:bg-yellow-200"
+                data-category="free"
+              >
+                חינם
+              </button>
+              <button
+                class="filter-btn px-3 py-1 rounded-full border text-sm transition border-gray-300 text-gray-700 bg-white hover:bg-blue-50"
+                data-category="productivity"
+              >
+                פרודוקטיביות
+              </button>
+              <button
+                class="filter-btn px-3 py-1 rounded-full border text-sm transition border-gray-300 text-gray-700 bg-white hover:bg-blue-50"
+                data-category="writing"
+              >
+                כתיבה
+              </button>
+              <button
+                class="filter-btn px-3 py-1 rounded-full border text-sm transition border-gray-300 text-gray-700 bg-white hover:bg-blue-50"
+                data-category="design"
+              >
+                עיצוב
+              </button>
+              <button
+                class="filter-btn px-3 py-1 rounded-full border text-sm transition border-gray-300 text-gray-700 bg-white hover:bg-blue-50"
+                data-category="coding"
+              >
+                תכנות
+              </button>
+              <button
+                class="filter-btn px-3 py-1 rounded-full border text-sm transition border-gray-300 text-gray-700 bg-white hover:bg-blue-50"
+                data-category="video"
+              >
+                וידאו
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /* --- Stats --- */ -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <!-- /* ... (content unchanged, including clickable stat boxes) ... */ -->
+        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+          <div class="flex items-center">
+            <div class="p-3 rounded-full bg-blue-50 text-blue-600 ml-3">
+              <i class="fas fa-tools text-lg"></i>
+            </div>
+            <div>
+              <p class="text-gray-500 text-sm">סה"כ כלים</p>
+              <h3 class="text-xl font-semibold" id="totalTools">0</h3>
+            </div>
+          </div>
+        </div>
+        <div
+          id="topRatedStatBox"
+          class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition clickable-stat"
+        >
+          <div class="flex items-center">
+            <div class="p-3 rounded-full bg-purple-50 text-purple-600 ml-3">
+              <i class="fas fa-star text-lg"></i>
+            </div>
+            <div>
+              <p class="text-gray-500 text-sm">מובילים בדירוג</p>
+              <h3 class="text-xl font-semibold" id="topRated">0</h3>
+            </div>
+          </div>
+        </div>
+        <div
+          id="newToolsStatBox"
+          class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition clickable-stat"
+        >
+          <div class="flex items-center">
+            <div class="p-3 rounded-full bg-green-50 text-green-600 ml-3">
+              <i class="fas fa-bolt text-lg"></i>
+            </div>
+            <div>
+              <p class="text-gray-500 text-sm">חדשים השבוע</p>
+              <h3 class="text-xl font-semibold" id="newTools">0</h3>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+          <div class="flex items-center">
+            <div class="p-3 rounded-full bg-yellow-50 text-yellow-600 ml-3">
+              <i class="fas fa-tags text-lg"></i>
+            </div>
+            <div>
+              <p class="text-gray-500 text-sm">קטגוריות</p>
+              <h3 class="text-xl font-semibold" id="totalCategories">0</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /* --- Tools Grid --- */ -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        id="toolsContainer"
+      >
+        <!-- /* --- Tools will be loaded here --- */ -->
+        <p id="loadingMessage" class="text-center text-gray-500 col-span-full">
+          טוען כלים...
+        </p>
+      </div>
+
+      <!-- /* --- YouTube Videos Section --- */ -->
+      <div class="mt-16">
+        <!-- /* ... (content unchanged) ... */ -->
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">
+          סרטונים נבחרים מערוץ היוטיוב שלי
+        </h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          id="videosContainer"
+        >
+          <!-- /* --- Videos will be loaded here --- */ -->
+        </div>
+      </div>
+    </main>
+
+    <!-- /* --- JSON Editor Modal (Admin Feature) --- */ -->
+    <div
+      id="jsonEditorModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <!-- /* ... (content unchanged) ... */ -->
+      <div
+        class="bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col"
+      >
+        <div
+          class="px-6 py-4 border-b border-gray-200 flex justify-between items-center"
+        >
+          <h3 class="text-lg font-semibold">עריכת הנתונים ב-JSON</h3>
+          <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="p-6 flex-1 overflow-auto">
+          <div class="flex mb-4">
+            <button
+              id="showToolsBtn"
+              class="px-4 py-2 bg-blue-600 text-white rounded-l-lg"
+            >
+              כלים
+            </button>
+            <button
+              id="showVideosBtn"
+              class="px-4 py-2 bg-gray-200 text-gray-700 rounded-r-lg"
+            >
+              סרטונים
+            </button>
+          </div>
+          <textarea
+            id="jsonEditor"
+            class="w-full h-96 p-4 border border-gray-300 rounded-lg font-mono text-sm"
+            spellcheck="false"
+            style="direction: ltr; text-align: left"
+          ></textarea>
+        </div>
+        <div
+          class="px-6 py-4 border-t border-gray-200 flex justify-end space-x-3 space-x-reverse"
+        >
+          <button
+            id="cancelEditBtn"
+            class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition"
+          >
+            ביטול
+          </button>
+          <button
+            id="saveJsonBtn"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          >
+            שמור שינויים (באחסון המקומי)
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="suggestToolModal"
+      class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-[9999] px-4 hidden"
+    >
+      <div
+        class="bg-white rounded-lg w-full max-w-md shadow-lg max-h-[90vh] overflow-hidden flex flex-col text-right relative"
+      >
+        <!-- תוכן -->
+        <div class="p-6 overflow-y-auto flex-grow">
+          <h2 class="text-xl font-semibold mb-4">הצעת כלי חדש</h2>
+          <form id="suggestToolForm" class="space-y-4">
+            <div>
+              <label class="block mb-1">שם הכלי</label>
+              <input
+                type="text"
+                name="name"
+                required
+                class="w-full border rounded p-2"
+              />
+            </div>
+
+            <div>
+              <label class="block mb-1">לינק</label>
+              <input
+                type="url"
+                name="url"
+                required
+                placeholder="כתובת URL של הכלי: לדוגמא: https://linktr.ee/sagib"
+                dir="ltr"
+                class="w-full border rounded p-2"
+              />
+            </div>
+
+            <div>
+              <label class="block mb-1">תיאור קצר</label>
+              <textarea
+                name="description"
+                required
+                class="w-full border rounded p-2"
+              ></textarea>
+            </div>
+
+            <div>
+              <label class="block mb-1">השם שלך</label>
+              <input
+                type="text"
+                name="userName"
+                placeholder="איך לקרוא לך כשנחזור אליך?"
+                class="w-full border rounded p-2"
+              />
+            </div>
+
+            <div>
+              <label class="block mb-1">מס' טלפון נייד</label>
+              <input
+                type="tel"
+                name="userPhone"
+                placeholder="05X-XXXXXXX"
+                class="w-full border rounded p-2"
+                dir="ltr"
+              />
+            </div>
+
+            <p class="text-sm text-gray-500">
+              נשמח לחזור אליך כשהכלי שצעת נוסף לאתר ❤️
+            </p>
+            <p class="text-sm text-gray-500 italic">
+              ✦ הפרטים שלך נשמרים אצלנו רק לצורך עדכון – אין שימוש אחר.
+            </p>
+          </form>
+        </div>
+
+        <!-- כפתורים קבועים בתחתית -->
+        <div
+          class="sticky bottom-0 bg-white/80 backdrop-blur-md px-6 py-4 border-t flex justify-center space-x-4 space-x-reverse z-10 rounded-b-lg"
+        >
+          <button
+            type="button"
+            onclick="closeSuggestModal()"
+            class="px-5 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
+          >
+            ביטול
+          </button>
+          <button
+            type="submit"
+            form="suggestToolForm"
+            class="px-6 py-2 bg-purple-600 text-white rounded hover:bg-purple-700"
+          >
+            שלח
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="videoModal"
+      class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-[9999]"
+    >
+      <div
+        class="bg-white rounded-lg overflow-hidden w-full max-w-3xl shadow-lg relative"
+      >
+        <button
+          onclick="closeVideoModal()"
+          class="absolute top-2 left-2 text-gray-700 hover:text-red-600 text-xl"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+        <iframe
+          id="videoIframe"
+          class="w-full h-[300px] sm:h-[500px]"
+          src=""
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- /* --- Footer --- */ -->
+    <footer
+      class="fixed bottom-0 left-0 w-full z-50 backdrop-blur-md bg-white/80 shadow-xl border-t border-gray-200"
+    >
+      <!-- הוספת כפתור צ'אט צף לקובץ index.html -->
+      <!-- Improved Chat Component -->
+      <div id="chatBubble" class="fixed bottom-8 right-5 z-[9999]">
+        <!-- Introductory message -->
+        <div
+          id="chatIntro"
+          class="bg-white p-3 rounded-lg shadow-md mb-2 text-sm max-w-xs chat-intro-enter hidden"
+        >
+          שלום! אני עוזר AI של שגיא. אשמח לעזור לך למצוא כלי AI מתאים או לענות
+          על שאלות.
+          <button onclick="hideChatIntro()" class="text-gray-500 float-left">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Chat Button -->
+        <button
+          id="chatButton"
+          onclick="toggleChatWindow()"
+          class="chat-pulse bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white px-4 py-3 rounded-full shadow-xl flex items-center space-x-2 space-x-reverse"
+        >
+          <i class="fas fa-robot"></i>
+          <span>צ'אט</span>
+        </button>
+
+        <!-- Chat Window -->
+        <div
+          id="chatWindow"
+          class="hidden mt-3 w-[360px] h-[500px] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden relative"
+        >
+          <!-- Chat Header -->
+          <div
+            class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-3 flex justify-between items-center"
+          >
+            <button onclick="toggleChatWindow()" class="text-white">
+              <i class="fas fa-times"></i>
+            </button>
+            <div class="chat-header">
+              צ'אט עם הבינה של שגיא
+              <span
+                id="toolsCount"
+                class="ml-2 text-sm bg-white text-purple-600 font-semibold px-2 py-1 rounded-full shadow-sm"
+              ></span>
+            </div>
+            <!-- <div class="font-medium">עוזר AI של שגיא</div> -->
+            <div class="w-6"></div>
+            <!-- Spacer for balance -->
+          </div>
+
+          <!-- Chat iframe -->
+          <iframe
+            src="https://sagi-ba-sagi-ai-tools-chatbot-main-g1prqf.streamlit.app/?embed=true"
+            class="w-full h-full border-none"
+          ></iframe>
+        </div>
+      </div>
+
+      <script>
+        function toggleChatWindow() {
+          const chatWindow = document.getElementById('chatWindow');
+          chatWindow.classList.toggle('hidden');
+        }
+      </script>
+
+      <!-- <span>© 2025 כל הזכויות שמורות לשגיא בר און.</span> -->
+      <div class="container mx-auto px-4 py-3 text-center space-y-2">
+        <!-- כפתור התקנת אפליקציה -->
+        <div id="installAppContainer" class="flex justify-center">
+          <button
+            id="installAppBtn"
+            class="mt-2 px-4 py-2 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 text-white font-bold shadow hover:scale-105 transition"
+            style="display: none"
+          >
+            📲 התקנת האפליקציה
+          </button>
+        </div>
+
+        <div class="flex justify-center gap-4">
+          <!-- אייקונים -->
+          <a
+            href="https://api.whatsapp.com/send?phone=972549995050"
+            target="_blank"
+            class="w-9 h-9 rounded-full bg-white shadow flex items-center justify-center text-green-500 hover:bg-green-500 hover:text-white transition"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+          <a
+            href="http://www.linkedin.com/in/sagi-bar-on"
+            target="_blank"
+            class="w-9 h-9 rounded-full bg-white shadow flex items-center justify-center text-blue-500 hover:bg-blue-700 hover:text-white transition"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/SAGI.BARON"
+            target="_blank"
+            class="w-9 h-9 rounded-full bg-white shadow flex items-center justify-center text-blue-600 hover:bg-blue-800 hover:text-white transition"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/@SAGIBARON"
+            target="_blank"
+            class="w-9 h-9 rounded-full bg-white shadow flex items-center justify-center text-red-500 hover:bg-red-700 hover:text-white transition"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+        <button
+          id="editJsonBtnFooter"
+          class="px-4 py-2 rounded-xl bg-gradient-to-br from-pink-500 to-purple-600 text-white font-bold shadow hover:scale-105 transition"
+        >
+          <i class="fas fa-pen-to-square ml-2"></i> הציעו כלי חדש
+        </button>
+        <p class="text-gray-500 text-xs">
+          © 2025 כל הזכויות שמורות לשגיא בר און
+        </p>
+      </div>
+      <!-- זהו ה־div הסוגר של ה־container -->
     </footer>
 
+    <!-- /* --- Load Tailwind CSS via CDN --- */ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- /* ----------------------------------- */
+    /* ------- START OF JAVASCRIPT ------- */
+    /* ----------------------------------- */ -->
     <script>
-        
-        // DOM Elements
-        // DOM Elements (נשארים ללא שינוי - רק לרפרנס)
-        const toolsContainer = document.getElementById('toolsContainer');
-        const videosContainer = document.getElementById('videosContainer');
-        const searchInput = document.getElementById('searchInput');
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const totalToolsElement = document.getElementById('totalTools');
-        const topRatedElement = document.getElementById('topRated');
-        const newToolsElement = document.getElementById('newTools');
-        const totalCategoriesElement = document.getElementById('totalCategories');
-        const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const jsonEditorModal = document.getElementById('jsonEditorModal');
-        const jsonEditor = document.getElementById('jsonEditor');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const cancelEditBtn = document.getElementById('cancelEditBtn');
-        const saveJsonBtn = document.getElementById('saveJsonBtn');
-        const showToolsBtn = document.getElementById('showToolsBtn');
-        const showVideosBtn = document.getElementById('showVideosBtn');
-        // const editJsonBtn = document.getElementById('editJsonBtn'); // הלחצן מוסתר כרגע
-        // const editJsonBtnMobile = document.getElementById('editJsonBtnMobile'); // הלחצן מוסתר כרגע
-        const refreshBtn = document.getElementById('refreshBtn');
-        const refreshBtnMobile = document.getElementById('refreshBtnMobile');
+      // --- DOM Elements ---
+      const toolsContainer = document.getElementById('toolsContainer');
+      const videosContainer = document.getElementById('videosContainer');
+      const searchInput = document.getElementById('searchInput');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const totalToolsElement = document.getElementById('totalTools');
+      const topRatedElement = document.getElementById('topRated');
+      const newToolsElement = document.getElementById('newTools');
+      const totalCategoriesElement = document.getElementById('totalCategories');
+      const mobileMenuButton = document.getElementById('mobileMenuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const jsonEditorModal = document.getElementById('jsonEditorModal');
+      const jsonEditor = document.getElementById('jsonEditor');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const cancelEditBtn = document.getElementById('cancelEditBtn');
+      const saveJsonBtn = document.getElementById('saveJsonBtn');
+      const showToolsBtn = document.getElementById('showToolsBtn');
+      const showVideosBtn = document.getElementById('showVideosBtn');
+      const refreshBtn = document.getElementById('refreshBtn');
+      const refreshBtnMobile = document.getElementById('refreshBtnMobile');
+      const loadingMessage = document.getElementById('loadingMessage'); // For showing loading status
 
-        // State
-        let currentCategory = 'all';
-        let currentSearchTerm = '';
-        let toolsData = { tools: [], videos: [] }; // Initialize empty
+      const topRatedStatBox = document.getElementById('topRatedStatBox');
+      const newToolsStatBox = document.getElementById('newToolsStatBox');
+      const totalToolsStatBox = document
+        .querySelector('[id="totalTools"]')
+        .closest('.bg-white');
+      let filteredStatView = null; // 'topRated', 'newTools', או null
 
-        // Initialize - Make it async
-        async function init() {
-            await loadData(); // Wait for data to load
-            renderTools();
-            renderVideos(); // Call the specific renderVideos function
-            updateStats();
-            setupEventListeners();
-            // Set initial active filter button
-            const allFilterBtn = document.querySelector('.filter-btn[data-category="all"]');
-            if (allFilterBtn) {
-                 allFilterBtn.classList.add('active');
-            }
-        }
-
-        // Fetch default data from JSON files
-        async function fetchDefaultData() {
-            try {
-                const [toolsResponse, videosResponse] = await Promise.all([
-                    fetch('tools.json'),
-                    fetch('videos.json')
-                ]);
-
-                if (!toolsResponse.ok || !videosResponse.ok) {
-                   throw new Error(`HTTP error! status: ${toolsResponse.status} / ${videosResponse.status}`);
-                }
-
-                const [toolsArray, videosArray] = await Promise.all([
-                    toolsResponse.json(),
-                    videosResponse.json()
-                ]);
-
-                return { tools: toolsArray, videos: videosArray };
-            } catch (error) {
-                console.error("Failed to fetch default data:", error);
-                alert("שגיאה בטעינת נתוני ברירת המחדל. נסה לרענן את הדף.");
-                return { tools: [], videos: [] }; // Return empty structure on error
-            }
-        }
-
-        // Load data from localStorage or fetch default from JSON
-        async function loadData() {
-            const savedData = localStorage.getItem('aiToolsData');
-            if (savedData) {
-                try {
-                    toolsData = JSON.parse(savedData);
-                    // Basic validation: ensure it has tools and videos arrays
-                    if (!Array.isArray(toolsData.tools) || !Array.isArray(toolsData.videos)) {
-                        console.warn("Invalid data structure in localStorage. Fetching defaults.");
-                        toolsData = await fetchDefaultData();
-                        saveData(); // Save the fetched defaults
-                    }
-                } catch (e) {
-                    console.error("Error parsing data from localStorage:", e);
-                    toolsData = await fetchDefaultData(); // Fetch defaults if parsing fails
-                    saveData(); // Save the fetched defaults
-                }
-            } else {
-                toolsData = await fetchDefaultData(); // Fetch defaults if no saved data
-                saveData(); // Save the fetched defaults to localStorage
-            }
-        }
-
-        // Save data to localStorage
-        function saveData() {
-            try {
-                localStorage.setItem('aiToolsData', JSON.stringify(toolsData));
-            } catch (e) {
-                console.error("Error saving data to localStorage:", e);
-                alert("שגיאה בשמירת הנתונים. ייתכן שהאחסון המקומי מלא.");
-            }
-        }
-
-        // Render tools based on filters (Modified slightly for safety)
-        function renderTools() {
-            if (!toolsContainer || !toolsData || !Array.isArray(toolsData.tools)) {
-                 console.error("Cannot render tools: Missing container or invalid data.");
-                 return;
-            }
-            const filteredTools = filterTools();
-
-            toolsContainer.innerHTML = ''; // Clear previous tools
-
-            if (filteredTools.length === 0) {
-                toolsContainer.innerHTML = '<p class="text-center text-gray-500 col-span-full">לא נמצאו כלים התואמים את החיפוש או הסינון.</p>';
-            } else {
-                filteredTools.forEach(tool => {
-                    const toolCard = document.createElement('div');
-                    // Add relative positioning for potential future badges (like admin edit)
-                    toolCard.className = `relative tool-card bg-white rounded-lg shadow-sm border border-gray-100 p-6 transition duration-300 ${tool.isFeatured ? 'ring-2 ring-blue-500' : ''}`;
-
-                    toolCard.innerHTML = `
-                        <div class="flex items-start mb-4">
-                            <div class="p-3 rounded-lg ${getCategoryColor(tool.category)} text-white mr-4 flex-shrink-0">
-                                <i class="${tool.icon || 'fas fa-question-circle'} text-xl"></i>
-                            </div>
-                            <div class="flex-grow">
-                                <h3 class="text-xl font-semibold">${tool.name || 'שם לא ידוע'}</h3>
-                                <span class="text-xs px-2 py-1 rounded-full ${getCategoryBadgeColor(tool.category)}">${getCategoryName(tool.category || 'כללי')}</span>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 mb-4 text-sm min-h-[60px]">${tool.description || 'אין תיאור זמין.'}</p>
-                        <div class="flex justify-between items-center mb-4">
-                            <div class="flex">
-                                ${renderRatingStars(tool.rating || 0)}
-                            </div>
-                            ${tool.isNew ? '<span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">חדש!</span>' : ''}
-                        </div>
-                        <a href="${tool.url || '#'}" target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition ${!tool.url ? 'opacity-50 cursor-not-allowed' : ''}">
-                            <i class="fas fa-external-link-alt ml-2"></i> ${tool.url ? 'גישה לכלי' : 'אין קישור'}
-                        </a>
-                    `;
-
-                    toolsContainer.appendChild(toolCard);
-                });
-            }
-        }
-
-        // Helper to get YouTube ID (Keep as is)
-        function getYouTubeID(url) {
-            if (!url) return '';
-            const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([^?&\/\s]+)/);
-            return match ? match[1] : '';
-        }
-
-        // Render videos (Keep mostly as is, just ensure data source is correct)
-        function renderVideos() {
-            if (!videosContainer || !toolsData || !Array.isArray(toolsData.videos)) {
-                console.error("Cannot render videos: Missing container or invalid data.");
-                return; // Prevent errors if data isn't ready or invalid
-            }
-
-            videosContainer.innerHTML = ''; // Clear previous videos
-
-            if (toolsData.videos.length === 0) {
-                 videosContainer.innerHTML = '<p class="text-center text-gray-500 col-span-full">אין סרטונים להצגה.</p>';
-            } else {
-                toolsData.videos.forEach(video => {
-                    const videoId = getYouTubeID(video.url);
-                    // If we can't get an ID, maybe skip or show a placeholder? For now, generate embed URL anyway.
-                    const embedUrl = videoId ? `https://www.youtube.com/embed/${videoId}` : '#'; // Use '#' or a placeholder URL if ID is missing
-
-                    const videoCard = document.createElement('div');
-                    videoCard.className = 'bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden';
-
-                    videoCard.innerHTML = `
-                        <div class="relative pt-[56.25%] ${!videoId ? 'bg-gray-200 flex items-center justify-center' : ''}">
-                            ${videoId ? `
-                            <iframe class="absolute top-0 left-0 w-full h-full" src="${embedUrl}" frameborder="0"
-                                title="${video.title || 'YouTube video'}"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                            ` : `
-                            <p class="text-gray-500 text-sm">קישור וידאו לא תקין</p>
-                            `}
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold mb-2">${video.title || 'כותרת חסרה'}</h3>
-                            <p class="text-gray-600 text-sm mb-3 min-h-[40px]">${video.description || 'אין תיאור זמין.'}</p>
-                            <p class="text-gray-500 text-xs">${formatDate(video.date)}</p>
-                        </div>
-                    `;
-
-                    videosContainer.appendChild(videoCard);
-                });
-            }
-        }
-
-        // Filter tools (Modified slightly for safety)
-        function filterTools() {
-            if (!toolsData || !Array.isArray(toolsData.tools)) {
-                 return []; // Return empty array if data is not ready
-            }
-            return toolsData.tools.filter(tool => {
-                const nameMatch = tool.name && tool.name.toLowerCase().includes(currentSearchTerm.toLowerCase());
-                const descMatch = tool.description && tool.description.toLowerCase().includes(currentSearchTerm.toLowerCase());
-                const categoryMatch = tool.category && tool.category.toLowerCase().includes(currentSearchTerm.toLowerCase()); // Optional: search category name too
-                const matchesSearch = nameMatch || descMatch || categoryMatch;
-
-                const matchesCategoryFilter = currentCategory === 'all' || tool.category === currentCategory;
-
-                return matchesCategoryFilter && matchesSearch;
-            });
-        }
-
-        // Update statistics (Modified slightly for safety)
-        function updateStats() {
-            const toolsCount = (toolsData && Array.isArray(toolsData.tools)) ? toolsData.tools.length : 0;
-            totalToolsElement.textContent = toolsCount;
-
-            const topRatedCount = toolsCount > 0 ? toolsData.tools.filter(tool => tool.rating >= 4).length : 0;
-            topRatedElement.textContent = topRatedCount;
-
-            const newToolsCount = toolsCount > 0 ? toolsData.tools.filter(tool => tool.isNew).length : 0;
-            newToolsElement.textContent = newToolsCount;
-
-            const categories = toolsCount > 0 ? new Set(toolsData.tools.map(tool => tool.category)) : new Set();
-            totalCategoriesElement.textContent = categories.size;
-        }
-
-        // Render rating stars (Keep as is)
-        function renderRatingStars(rating) {
-             let stars = '';
-             const filledStars = Math.max(0, Math.min(5, Math.round(rating || 0))); // Ensure rating is between 0 and 5
-             for (let i = 1; i <= 5; i++) {
-                 if (i <= filledStars) {
-                     stars += '<i class="fas fa-star text-yellow-400"></i>';
-                 } else {
-                     stars += '<i class="far fa-star text-gray-300"></i>'; // Use gray for empty stars
-                 }
-             }
-             return stars;
-        }
-
-        // Get category name (Keep as is, maybe add a default)
-        function getCategoryName(category) {
-            const categories = {
-                'productivity': 'פרודוקטיביות',
-                'writing': 'כתיבה',
-                'design': 'עיצוב',
-                'coding': 'תכנות',
-                'video': 'וידאו',
-                'image': 'תמונה',
-                'education': 'חינוך',
-                'data': 'נתונים',
-                'search': 'חיפוש',
-                'builder': 'בנייה',
-                'customer-support': 'תמיכה',
-                'automation': 'אוטומציה',
-                'hosting': 'אחסון',
-                'agents': 'סוכנים',
-                'directory': 'אינדקס',
-                'utility': 'כלי עזר',
-                'platform': 'פלטפורמה',
-                'media': 'מדיה',
-                'presentation': 'מצגות',
-                'audio': 'שמע',
-                'infrastructure': 'תשתיות',
-                'nlp': 'עיבוד שפה',
-                'accessibility': 'נגישות'
-                // Add other categories from your JSON here
-            };
-            return categories[category] || category || 'כללי'; // Return category key or 'כללי' if null/undefined
-        }
-
-        // Get category color (Add more colors or a default)
-        function getCategoryColor(category) {
-            const colors = {
-                'productivity': 'bg-blue-600',
-                'writing': 'bg-purple-600',
-                'design': 'bg-pink-600',
-                'coding': 'bg-green-600',
-                'video': 'bg-red-600',
-                'image': 'bg-yellow-600',
-                'education': 'bg-indigo-600',
-                'data': 'bg-cyan-600',
-                'search': 'bg-teal-600',
-                'builder': 'bg-orange-600',
-                'customer-support': 'bg-lime-600',
-                'automation': 'bg-sky-600',
-                'hosting': 'bg-amber-600',
-                'agents': 'bg-violet-600',
-                'directory': 'bg-fuchsia-600',
-                'utility': 'bg-rose-600',
-                'platform': 'bg-emerald-600',
-                'media': 'bg-stone-600',
-                'presentation': 'bg-red-500',
-                'audio': 'bg-blue-500',
-                'infrastructure': 'bg-gray-700',
-                'nlp': 'bg-purple-500',
-                'accessibility': 'bg-green-500'
-                // Add more as needed
-            };
-            return colors[category] || 'bg-gray-600'; // Default color
-        }
-
-        // Get category badge color (Add more or a default)
-        function getCategoryBadgeColor(category) {
-            const colors = {
-                'productivity': 'bg-blue-100 text-blue-800',
-                'writing': 'bg-purple-100 text-purple-800',
-                'design': 'bg-pink-100 text-pink-800',
-                'coding': 'bg-green-100 text-green-800',
-                'video': 'bg-red-100 text-red-800',
-                'image': 'bg-yellow-100 text-yellow-800',
-                'education': 'bg-indigo-100 text-indigo-800',
-                'data': 'bg-cyan-100 text-cyan-800',
-                'search': 'bg-teal-100 text-teal-800',
-                'builder': 'bg-orange-100 text-orange-800',
-                'customer-support': 'bg-lime-100 text-lime-800',
-                'automation': 'bg-sky-100 text-sky-800',
-                'hosting': 'bg-amber-100 text-amber-800',
-                'agents': 'bg-violet-100 text-violet-800',
-                'directory': 'bg-fuchsia-100 text-fuchsia-800',
-                'utility': 'bg-rose-100 text-rose-800',
-                'platform': 'bg-emerald-100 text-emerald-800',
-                'media': 'bg-stone-100 text-stone-800',
-                'presentation': 'bg-red-100 text-red-800',
-                'audio': 'bg-blue-100 text-blue-800',
-                'infrastructure': 'bg-gray-200 text-gray-800',
-                'nlp': 'bg-purple-100 text-purple-800',
-                'accessibility': 'bg-green-100 text-green-800'
-                 // Add more as needed
-            };
-            return colors[category] || 'bg-gray-100 text-gray-800'; // Default badge color
-        }
-
-        // Format date (Keep as is, maybe add error handling)
-        function formatDate(dateString) {
-            if (!dateString) return 'תאריך לא זמין';
-            try {
-                // Handle potential non-standard date formats if necessary
-                const date = new Date(dateString);
-                 // Check if date is valid
-                 if (isNaN(date.getTime())) {
-                     return 'תאריך לא תקין';
-                 }
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                return date.toLocaleDateString('he-IL', options);
-            } catch (e) {
-                console.error("Error formatting date:", dateString, e);
-                return 'תאריך לא תקין';
-            }
-        }
-
-
-        // Setup event listeners (Update refresh button logic)
-        function setupEventListeners() {
-            // Search input
-            searchInput.addEventListener('input', (e) => {
-                currentSearchTerm = e.target.value;
-                renderTools();
-            });
-
-            // Filter buttons
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    currentCategory = button.dataset.category;
-                    renderTools();
-                });
-            });
-
-            // Mobile menu toggle
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('open');
-            });
-
-            // JSON Editor Modal (Keep as is, but consider removing buttons if not admin)
-             const openEditorHandler = () => {
-                // Default to showing tools first
-                showToolsBtn.click(); // Simulate click to set initial state
-                jsonEditorModal.classList.remove('hidden');
-             };
-
-            // If Edit buttons exist, add listeners
-            // const editJsonBtn = document.getElementById('editJsonBtn');
-            // const editJsonBtnMobile = document.getElementById('editJsonBtnMobile');
-            // if (editJsonBtn) editJsonBtn.addEventListener('click', openEditorHandler);
-            // if (editJsonBtnMobile) editJsonBtnMobile.addEventListener('click', openEditorHandler);
-
-            closeModalBtn.addEventListener('click', () => {
-                jsonEditorModal.classList.add('hidden');
-            });
-
-            cancelEditBtn.addEventListener('click', () => {
-                jsonEditorModal.classList.add('hidden');
-            });
-
-            saveJsonBtn.addEventListener('click', () => {
-                try {
-                    const newData = JSON.parse(jsonEditor.value);
-                    if (showToolsBtn.classList.contains('bg-blue-600')) {
-                        if (!Array.isArray(newData)) throw new Error("Data must be an array.");
-                        toolsData.tools = newData;
-                    } else {
-                         if (!Array.isArray(newData)) throw new Error("Data must be an array.");
-                        toolsData.videos = newData;
-                    }
-                    saveData(); // Save changes to localStorage
-                    renderTools();
-                    renderVideos(); // Re-render videos as well
-                    updateStats();
-                    jsonEditorModal.classList.add('hidden');
-                    alert("הנתונים נשמרו בהצלחה (באחסון המקומי).");
-                } catch (e) {
-                    alert('JSON לא תקין: ' + e.message);
-                }
-            });
-
-            showToolsBtn.addEventListener('click', () => {
-                showToolsBtn.classList.add('bg-blue-600', 'text-white');
-                showToolsBtn.classList.remove('bg-gray-200', 'text-gray-700');
-                showVideosBtn.classList.add('bg-gray-200', 'text-gray-700');
-                showVideosBtn.classList.remove('bg-blue-600', 'text-white');
-                jsonEditor.value = JSON.stringify(toolsData.tools, null, 2);
-            });
-
-            showVideosBtn.addEventListener('click', () => {
-                showVideosBtn.classList.add('bg-blue-600', 'text-white');
-                showVideosBtn.classList.remove('bg-gray-200', 'text-gray-700');
-                showToolsBtn.classList.add('bg-gray-200', 'text-gray-700');
-                showToolsBtn.classList.remove('bg-blue-600', 'text-white');
-                jsonEditor.value = JSON.stringify(toolsData.videos, null, 2);
-            });
-
-            // Refresh buttons - Load default data from JSON files
-            const refreshHandler = async () => {
-                if (confirm("פעולה זו תחליף את כל הנתונים הנוכחיים (כולל שינויים שביצעת בעורך) בנתוני ברירת המחדל. האם להמשיך?")) {
-                    console.log("Refreshing data from default JSON files...");
-                    toolsData = await fetchDefaultData(); // Fetch the defaults
-                    saveData(); // Overwrite localStorage with defaults
-                    renderTools();
-                    renderVideos();
-                    updateStats();
-                    // Reset filters and search
-                    searchInput.value = '';
-                    currentSearchTerm = '';
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                     const allFilterBtn = document.querySelector('.filter-btn[data-category="all"]');
-                     if (allFilterBtn) {
-                         allFilterBtn.classList.add('active');
-                     }
-                    currentCategory = 'all';
-                    renderTools(); // Render again with reset filters
-                    alert("הנתונים רועננו לערכי ברירת המחדל.");
-                }
-            };
-
-            refreshBtn.addEventListener('click', refreshHandler);
-            refreshBtnMobile.addEventListener('click', refreshHandler);
-        }
-
-        // Initialize the app when the DOM is ready
-        document.addEventListener('DOMContentLoaded', init);
-
-        // --- Keep the separate getYouTubeID and renderVideos for DOMContentLoaded if needed ---
-        // Although the main init() now calls renderVideos after data loading,
-        // keeping this might be a fallback or part of the original structure you wanted.
-        // It's slightly redundant now if init() works correctly.
-        /*
-        function getYouTubeID(url) { // Already defined above, potentially remove this duplicate
-            const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([^?&\/\s]+)/);
-            return match ? match[1] : '';
-        }
-
-        function renderVideos() { // Already defined above, potentially remove this duplicate
-             // ... (implementation is identical to the one inside the main script block) ...
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            // This might run before init() finishes loading data if init is slow.
-            // It's safer to rely on init() calling renderVideos.
-            // renderVideos();
+      if (totalToolsStatBox) {
+        totalToolsStatBox.classList.add('clickable-stat');
+        totalToolsStatBox.addEventListener('click', () => {
+          filteredStatView = null;
+          currentSearchTerm = '';
+          currentCategory = 'all';
+          document
+            .querySelectorAll('.filter-btn')
+            .forEach((btn) => btn.classList.remove('active'));
+          const allBtn = document.querySelector(
+            '.filter-btn[data-category="all"]'
+          );
+          if (allBtn) allBtn.classList.add('active');
+          renderTools();
+          scrollToTools();
         });
-        */
+      }
 
+      if (topRatedStatBox) {
+        topRatedStatBox.addEventListener('click', () => {
+          filteredStatView = 'topRated';
+          currentSearchTerm = '';
+          currentCategory = 'all';
+          renderTools();
+          scrollToTools();
+        });
+      }
+
+      if (newToolsStatBox) {
+        newToolsStatBox.addEventListener('click', () => {
+          filteredStatView = 'newTools';
+          currentSearchTerm = '';
+          currentCategory = 'all';
+          renderTools();
+          scrollToTools();
+        });
+      }
+
+      // --- State ---
+      let currentCategory = 'all';
+      let currentSearchTerm = '';
+      let toolsData = { tools: [], videos: [] }; // Holds the data fetched from server
+      let currentSort = 'newest'; // 'newest', 'rating'
+
+      // --- Initialize ---
+      async function init() {
+        showLoading('טוען נתונים...');
+
+        try {
+          await loadData(); // המתנה לטעינת הנתונים
+
+          renderTools();
+          renderVideos();
+          updateStats();
+          setupEventListeners();
+          updateCategoryFilters(); // הוספת כפתור המועדפים
+
+          // הגדרת כפתור "הכל" כפעיל בהתחלה
+          const allFilterBtn = document.querySelector(
+            '.filter-btn[data-category="all"]'
+          );
+          if (allFilterBtn) {
+            allFilterBtn.classList.add('active');
+          }
+
+          hideLoading();
+        } catch (error) {
+          console.error('שגיאה באתחול:', error);
+          showError('אירעה שגיאה בטעינת האתר. אנא נסה לרענן את הדף.');
+          hideLoading();
+        }
+      }
+
+      const speechSynthesis = window.speechSynthesis;
+      let currentUtterance = null;
+
+      // פונקציה להקראת טקסט בעברית
+      function speakText(text) {
+        // עצירת הקראה קודמת אם יש
+        if (speechSynthesis.speaking) {
+          speechSynthesis.cancel();
+
+          // אם זאת אותה הקראה שכבר פועלת, פשוט נעצור ונצא
+          if (currentUtterance && currentUtterance.text === text) {
+            currentUtterance = null;
+            return;
+          }
+        }
+
+        // יצירת הקראה חדשה
+        const utterance = new SpeechSynthesisUtterance(text);
+
+        // הגדרת השפה לעברית
+        utterance.lang = 'he-IL';
+
+        // בדיקת קולות זמינים ובחירת קול עברי
+        const voices = speechSynthesis.getVoices();
+
+        if (voices.length) {
+          const hebrewVoice = voices.find((voice) =>
+            /he|hebrew|ivrit/i.test(voice.lang)
+          );
+
+          if (hebrewVoice) {
+            utterance.voice = hebrewVoice;
+            console.log('נבחר קול עברי:', hebrewVoice.name);
+          } else {
+            console.log('לא נמצא קול עברי, משתמש בקול ברירת מחדל');
+          }
+          // ננסה להשתמש בקול גוגל
+          const googleVoice = voices.find(
+            (voice) =>
+              voice.name.includes('Google') &&
+              (voice.name.includes('US') || voice.name.includes('UK'))
+          );
+
+          if (googleVoice) {
+            utterance.voice = googleVoice;
+          }
+        } else {
+          // במקרה שהקולות עדיין לא נטענו, נגדיר מאזין חד-פעמי
+          speechSynthesis.addEventListener(
+            'voiceschanged',
+            function loadVoice() {
+              const voices = speechSynthesis.getVoices();
+              const hebrewVoice = voices.find((voice) =>
+                /he|hebrew|ivrit/i.test(voice.lang)
+              );
+              if (hebrewVoice) {
+                utterance.voice = hebrewVoice;
+                console.log('נבחר קול עברי (מדחייה):', hebrewVoice.name);
+              }
+              // הסרת המאזין אחרי הפעלה ראשונה
+              speechSynthesis.removeEventListener('voiceschanged', loadVoice);
+            },
+            { once: true }
+          );
+        }
+
+        // שמירת ההקראה הנוכחית
+        currentUtterance = utterance;
+
+        // טיפול באירוע סיום הקראה
+        utterance.onend = () => {
+          currentUtterance = null;
+
+          // עדכון כל הכפתורים למצב "לא מנגן"
+          document.querySelectorAll('.speak-button').forEach((btn) => {
+            btn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            btn.classList.remove('speaking');
+          });
+        };
+
+        // הפעלת ההקראה
+        speechSynthesis.speak(utterance);
+      }
+
+      // --- UI Feedback ---
+      function showLoading() {
+        if (loadingMessage) loadingMessage.style.display = 'block';
+        if (toolsContainer) toolsContainer.innerHTML = ''; // Clear container while loading
+      }
+
+      function hideLoading() {
+        if (loadingMessage) loadingMessage.style.display = 'none';
+      }
+
+      function showError(message) {
+        if (toolsContainer) {
+          toolsContainer.innerHTML = `<p class="text-center text-red-600 col-span-full">${message}</p>`;
+        }
+        hideLoading(); // Make sure loading message is hidden
+      }
+
+      // --- Data Fetching ---
+      async function fetchDefaultData() {
+        console.log('Fetching latest data from server...'); // Log fetching attempt
+        try {
+          const [toolsResponse, videosResponse] = await Promise.all([
+            fetch('tools.json?cacheBust=' + Date.now()), // Cache busting
+            fetch('videos.json?cacheBust=' + Date.now()), // Cache busting
+          ]);
+
+          if (!toolsResponse.ok || !videosResponse.ok) {
+            const errorMsg = `HTTP error! Status: Tools ${toolsResponse.status}, Videos ${videosResponse.status}`;
+            console.error(errorMsg);
+            throw new Error('שגיאה בקבלת נתונים מהשרת.'); // User-friendly error
+          }
+
+          const [toolsArray, videosArray] = await Promise.all([
+            toolsResponse.json(),
+            videosResponse.json(),
+          ]);
+
+          // --- Process fetched data with defaults ---
+          const processedTools = toolsArray.map((tool) => ({
+            ...tool,
+            rating: tool.rating ?? 0,
+            isNew: tool.isNew ?? false,
+            category: tool.category ?? 'general',
+            icon: tool.icon || 'fas fa-tools',
+            url: tool.url || '#',
+            description: tool.description || 'אין תיאור זמין.',
+            name: tool.name || 'שם לא ידוע',
+          }));
+          const processedVideos = videosArray.map((video) => ({
+            ...video,
+            url: video.url || '#',
+            title: video.title || 'כותרת חסרה',
+            description: video.description || 'אין תיאור זמין.',
+            date: video.date ?? new Date().toISOString(),
+          }));
+
+          console.log('Data fetched successfully.');
+          return { tools: processedTools, videos: processedVideos };
+        } catch (error) {
+          console.error('Failed to fetch default data:', error);
+          // Re-throw the error or a more specific one to be caught by the caller
+          throw new Error(
+            'כשל בטעינת נתוני ברירת המחדל מהשרת. בדוק את הקבצים tools.json ו-videos.json.'
+          );
+        }
+      }
+
+      // --- Data Loading Strategy ---
+      // MODIFIED: Always fetch fresh data from the server on load.
+      async function loadData() {
+        console.log('loadData called - fetching fresh data.');
+        try {
+          toolsData = await fetchDefaultData();
+          // Note: We are NOT saving to localStorage here anymore for loading purposes.
+          // saveData(); // Removed - No longer saving fetched data automatically
+        } catch (error) {
+          console.error('Error in loadData:', error);
+          toolsData = { tools: [], videos: [] }; // Set empty data on error
+          // Re-throw error so init() can handle UI feedback
+          throw error;
+        }
+      }
+
+      // --- Save Data to Local Storage (Used ONLY by JSON Editor) ---
+      // Note: Data saved here will be overwritten on next page load/refresh.
+      function saveData() {
+        try {
+          // Save the current state (potentially modified by editor) to localStorage
+          localStorage.setItem('aiToolsData', JSON.stringify(toolsData));
+          console.log(
+            'Data saved to localStorage (by editor). Will be overwritten on next load.'
+          );
+        } catch (e) {
+          console.error('Error saving data to localStorage:', e);
+          alert('שגיאה בשמירת הנתונים באחסון המקומי.');
+        }
+      }
+
+      // --- Sorting Function (Unchanged) ---
+      function sortTools(sortBy) {
+        if (!toolsData || !Array.isArray(toolsData.tools)) return;
+        console.log('Sorting by:', sortBy);
+        currentSort = sortBy;
+        toolsData.tools.sort((a, b) => {
+          if (sortBy === 'newest') {
+            const aIsNew = a.isNew || false;
+            const bIsNew = b.isNew || false;
+            if (aIsNew !== bIsNew) return bIsNew - aIsNew;
+            return 0;
+          } else if (sortBy === 'rating') {
+            const aRating = a.rating || 0;
+            const bRating = b.rating || 0;
+            if (bRating !== aRating) return bRating - aRating;
+            return 0;
+          }
+          return 0;
+        });
+      }
+      function scrollToTools() {
+        const toolsSection = document.getElementById('toolsContainer');
+        if (toolsSection) {
+          toolsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      // --- Rendering Functions (Unchanged logic, but added hideLoading) ---
+      function renderTools() {
+        hideLoading(); // Ensure loading message is hidden before rendering
+        if (!toolsContainer || !toolsData || !Array.isArray(toolsData.tools)) {
+          console.error(
+            'Cannot render tools: Missing container or invalid data.'
+          );
+          showError('שגיאה בהצגת הכלים.');
+          return;
+        }
+        const filteredTools = filterTools();
+        toolsContainer.innerHTML = ''; // Clear previous content
+
+        if (
+          filteredTools.length === 0 &&
+          currentSearchTerm === '' &&
+          currentCategory === 'all'
+        ) {
+          // Show specific message if no tools loaded at all
+          showError('לא נטענו כלים. בדוק את קובץ tools.json או נסה לרענן.');
+        } else if (filteredTools.length === 0) {
+          toolsContainer.innerHTML =
+            '<p class="text-center text-gray-500 col-span-full">לא נמצאו כלים התואמים את החיפוש, הסינון והמיון.</p>';
+        } else {
+          filteredTools.forEach((tool, index) => {
+            const toolCard = document.createElement('div');
+            toolCard.className = `relative tool-card bg-white rounded-lg shadow-sm border border-gray-100 p-6 transition duration-300 ${
+              tool.isFeatured ? 'ring-2 ring-blue-500' : ''
+            }`;
+
+            // הכנת הטקסט להקראה - שילוב של שם הכלי והתיאור שלו
+            const speakableText = `${tool.name}. ${tool.description}`;
+
+            // הוספת מאפיין לסינון כלים חינמיים
+            if (tool.free) {
+              toolCard.setAttribute('data-free', 'true');
+              toolCard.classList.add(
+                'border',
+                'border-yellow-400',
+                'shadow-md'
+              );
+            }
+            toolCard.setAttribute('data-tool', 'true');
+
+            toolCard.innerHTML = `
+                    <div class="relative flex items-center gap-3 mb-2">
+                      <!-- כפתור רמקול צף בפינה שמאלית -->
+                      <button title="הקרא תיאור" onclick="event.stopPropagation(); speakText('${tool.description.replace(/'/g, "\\'")}')" class="speak-button absolute top-0 left-0 z-10 p-2 text-blue-600 hover:text-blue-800 focus:outline-none" style="background:rgba(255,255,255,0.8); border-radius:50%;">
+                        <i class="fas fa-volume-up"></i>
+                      </button>
+                      <img src="${tool.logo}" alt="${tool.name} Logo" class="tool-logo w-14 h-14 object-contain rounded bg-white p-1 shadow-sm ml-2">
+                      <h3 class="tool-name text-2xl font-bold text-gray-800">${tool.name}</h3>
+                    </div>
+                    <div class="flex items-center gap-2 mb-3">
+                      <span class="category-chip px-3 py-1 rounded-full font-semibold text-sm shadow-sm ${getCategoryBadgeColor(tool.category)} flex items-center gap-1">
+                        <i class="${tool.icon} text-base"></i>
+                        ${getCategoryName(tool.category)}
+                      </span>
+                    </div>
+                    <div class="flex items-center gap-2 mb-3">
+                      ${tool.isNew ? `<span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full animate-pulse">חדש!</span>` : ''}
+                      ${tool.free ? `<span class="text-xs bg-yellow-400 text-black px-2 py-1 rounded-full">חינם</span>` : ''}
+                      <button class="favorite-btn p-2 text-yellow-400 hover:text-yellow-500 transition" data-id="${index}" title="הוסף למועדפים">
+                        <i class="far fa-star text-xl"></i>
+                      </button>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-base leading-relaxed min-h-[60px]">${tool.description}</p>
+                    <div class="flex justify-center items-center gap-1 mb-4">
+                      ${renderRatingStars(tool.rating)}
+                    </div>
+                    <a href="${tool.url}" target="_blank" rel="noopener noreferrer"
+                      class="inline-block w-full text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition ${tool.url === '#' ? 'opacity-50 cursor-not-allowed' : ''}">
+                      <i class="fas fa-external-link-alt ml-2"></i> ${tool.url !== '#' ? 'גישה לכלי' : 'אין קישור'}
+                    </a>
+                    ${renderShareButtons(tool)}
+                `;
+
+            toolsContainer.appendChild(toolCard);
+
+            // אנימציה של הופעה חלקה
+            requestAnimationFrame(() => {
+              toolCard.classList.add('visible');
+            });
+          });
+
+          // הפעלת פונקציות האתחול לאחר הוספת הכלים לדף
+          setupFavorites();
+          setupShareButtons();
+
+          // הוספת סגנון CSS לכפתור הקראה פעיל
+          if (!document.getElementById('speakButtonStyle')) {
+            const style = document.createElement('style');
+            style.id = 'speakButtonStyle';
+            style.innerHTML = `
+                    .speak-button.speaking { color: #4f46e5; animation: pulse 1.5s infinite; }
+                    @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.2); }
+                    100% { transform: scale(1); }
+                    }
+                `;
+            document.head.appendChild(style);
+          }
+        }
+      }
+
+      // פונקציה נוספת שמוחקת את ההקראה בעת עזיבת העמוד
+      function cleanupSpeech() {
+        if (speechSynthesis) {
+          speechSynthesis.cancel();
+        }
+      }
+
+      // הוספת אירוע לניקוי ההקראה בעת עזיבת העמוד
+      window.addEventListener('beforeunload', cleanupSpeech);
+
+      // עדכון אירוע הקלקה על כפתור הקראה - להוסיף מחלקת CSS ולשנות אייקון
+      document.addEventListener('click', function (e) {
+        if (e.target.closest('.speak-button')) {
+          const button = e.target.closest('.speak-button');
+
+          // החלפת האייקון והוספת מחלקת CSS מהבהבת
+          if (speechSynthesis.speaking && currentUtterance) {
+            // אם יש הקראה פעילה, נעדכן את כל הכפתורים
+            document.querySelectorAll('.speak-button').forEach((btn) => {
+              btn.innerHTML = '<i class="fas fa-volume-up"></i>';
+              btn.classList.remove('speaking');
+            });
+
+            // ואז נעדכן את הכפתור הנוכחי אם ההקראה ממשיכה
+            if (!button.classList.contains('speaking')) {
+              button.innerHTML = '<i class="fas fa-volume-mute"></i>';
+              button.classList.add('speaking');
+            }
+          } else {
+            button.innerHTML = '<i class="fas fa-volume-up"></i>';
+            button.classList.remove('speaking');
+          }
+        }
+      });
+
+      function renderVideos() {
+        // ... (renderVideos logic remains the same as before) ...
+        if (
+          !videosContainer ||
+          !toolsData ||
+          !Array.isArray(toolsData.videos)
+        ) {
+          console.error(
+            'Cannot render videos: Missing container or invalid data.'
+          );
+          if (videosContainer)
+            videosContainer.innerHTML =
+              '<p class="text-center text-red-500 col-span-full">שגיאה בהצגת הסרטונים.</p>';
+          return;
+        }
+        videosContainer.innerHTML = '';
+        if (toolsData.videos.length === 0) {
+          videosContainer.innerHTML =
+            '<p class="text-center text-gray-500 col-span-full">אין סרטונים להצגה.</p>';
+        } else {
+          toolsData.videos.forEach((video) => {
+            const videoId = getYouTubeID(video.url);
+            const embedUrl = videoId
+              ? `https://www.youtube.com/embed/${videoId}`
+              : '#';
+            const videoCard = document.createElement('div');
+            videoCard.className =
+              'bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden';
+            videoCard.innerHTML = `
+                         <div class="relative pt-[56.25%] ${
+                           !videoId
+                             ? 'bg-gray-200 flex items-center justify-center'
+                             : ''
+                         }">
+                             ${
+                               videoId
+                                 ? `<iframe class="absolute top-0 left-0 w-full h-full" src="${embedUrl}" frameborder="0" title="${video.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                                 : `<p class="text-gray-500 text-sm p-4">${
+                                     video.url === '#'
+                                       ? 'אין קישור וידאו'
+                                       : 'קישור וידאו לא תקין'
+                                   }</p>`
+                             }
+                         </div>
+                         <div class="p-4">
+                             <h3 class="text-lg font-semibold mb-2">${
+                               video.title
+                             }</h3>
+                             <p class="text-gray-600 text-sm mb-3 min-h-[40px]">${
+                               video.description
+                             }</p>
+                             <p class="text-gray-500 text-xs">${formatDate(
+                               video.date
+                             )}</p>
+                         </div>`;
+            videosContainer.appendChild(videoCard);
+          });
+        }
+      }
+
+      // --- Helper Functions (Filtering, Stats, Stars, Category, Date - Unchanged) ---
+      function filterTools() {
+        if (!toolsData || !Array.isArray(toolsData.tools)) return [];
+
+        let filtered = toolsData.tools;
+
+        // Filter by favorites if selected
+        if (currentCategory === 'favorites') {
+            filtered = filtered.filter((_, index) =>
+                favorites.includes(index.toString())
+            );
+        } else if (currentCategory === 'free') {
+            filtered = filtered.filter((tool) => tool.free === true);
+        } else if (currentCategory !== 'all') {
+            filtered = filtered.filter(
+                (tool) => tool.category === currentCategory
+            );
+        }
+
+        // Search by name and description
+        if (currentSearchTerm) {
+            const searchLower = currentSearchTerm.toLowerCase();
+            filtered = filtered.filter((tool) => {
+                const nameMatch =
+                    tool.name && tool.name.toLowerCase().includes(searchLower);
+                const descMatch =
+                    tool.description &&
+                    tool.description.toLowerCase().includes(searchLower);
+                return nameMatch || descMatch; // Include both name and description in search
+            });
+        }
+
+        // Check for filteredStatView
+        if (filteredStatView === 'topRated') {
+            filtered = filtered.filter((tool) => tool.rating >= 5);
+        } else if (filteredStatView === 'newTools') {
+            filtered = filtered.filter((tool) => tool.isNew);
+        }
+
+        return filtered;
+      }
+
+      function updateStats() {
+        /* ... (unchanged) ... */
+        const toolsCount =
+          toolsData && Array.isArray(toolsData.tools)
+            ? toolsData.tools.length
+            : 0;
+        totalToolsElement.textContent = toolsCount;
+        const topRatedCount =
+          toolsCount > 0
+            ? toolsData.tools.filter((tool) => tool.rating >= 5).length
+            : 0;
+        topRatedElement.textContent = topRatedCount;
+        const newToolsCount =
+          toolsCount > 0
+            ? toolsData.tools.filter((tool) => tool.isNew).length
+            : 0;
+        newToolsElement.textContent = newToolsCount;
+        const categories =
+          toolsCount > 0
+            ? new Set(toolsData.tools.map((tool) => tool.category))
+            : new Set();
+        totalCategoriesElement.textContent = categories.size;
+      }
+
+      function renderRatingStars(rating) {
+        /* ... (unchanged) ... */
+        let stars = '';
+        const filledStars = Math.max(0, Math.min(5, Math.round(rating)));
+        for (let i = 1; i <= 5; i++) {
+          stars += `<i class="${
+            i <= filledStars
+              ? 'fas fa-star text-yellow-400'
+              : 'far fa-star text-gray-300'
+          } ml-1"></i>`;
+        }
+        return stars;
+      }
+      function getCategoryName(category) {
+        /* ... (unchanged) ... */
+        const categories = {
+          'ai-agents': 'סוכן AI',
+          productivity: 'פרודוקטיביות',
+          writing: 'כתיבה',
+          design: 'עיצוב',
+          coding: 'תכנות',
+          video: 'וידאו',
+          image: 'תמונה',
+          education: 'חינוך',
+          data: 'נתונים',
+          search: 'חיפוש',
+          builder: 'בנייה',
+          'customer-support': 'תמיכה',
+          automation: 'אוטומציה',
+          hosting: 'אחסון',
+          agents: 'סוכנים',
+          directory: 'אינדקס',
+          utility: 'כלי עזר',
+          platform: 'פלטפורמה',
+          media: 'מדיה',
+          presentation: 'מצגות',
+          audio: 'שמע',
+          infrastructure: 'תשתיות',
+          nlp: 'עיבוד שפה',
+          accessibility: 'נגישות',
+          general: 'כללי',
+        };
+        return categories[category] || category || 'כללי';
+      }
+      function getCategoryColor(category) {
+        /* ... (unchanged) ... */
+        const colors = {
+          productivity: 'bg-blue-600',
+          writing: 'bg-purple-600',
+          design: 'bg-pink-600',
+          coding: 'bg-green-600',
+          video: 'bg-red-600',
+          image: 'bg-yellow-600',
+          education: 'bg-indigo-600',
+          data: 'bg-cyan-600',
+          search: 'bg-teal-600',
+          builder: 'bg-orange-600',
+          'customer-support': 'bg-lime-600',
+          automation: 'bg-sky-600',
+          hosting: 'bg-amber-600',
+          agents: 'bg-violet-600',
+          directory: 'bg-fuchsia-600',
+          utility: 'bg-rose-600',
+          platform: 'bg-emerald-600',
+          media: 'bg-stone-600',
+          presentation: 'bg-red-500',
+          audio: 'bg-blue-500',
+          infrastructure: 'bg-gray-700',
+          nlp: 'bg-purple-500',
+          accessibility: 'bg-green-500',
+          general: 'bg-gray-600',
+        };
+        return colors[category] || 'bg-gray-600';
+      }
+      function getCategoryBadgeColor(category) {
+        /* ... (unchanged) ... */
+        const colors = {
+          productivity: 'bg-blue-100 text-blue-800',
+          writing: 'bg-purple-100 text-purple-800',
+          design: 'bg-pink-100 text-pink-800',
+          coding: 'bg-green-100 text-green-800',
+          video: 'bg-red-100 text-red-800',
+          image: 'bg-yellow-100 text-yellow-800',
+          education: 'bg-indigo-100 text-indigo-800',
+          data: 'bg-cyan-100 text-cyan-800',
+          search: 'bg-teal-100 text-teal-800',
+          builder: 'bg-orange-100 text-orange-800',
+          'customer-support': 'bg-lime-100 text-lime-800',
+          automation: 'bg-sky-100 text-sky-800',
+          hosting: 'bg-amber-100 text-amber-800',
+          agents: 'bg-violet-100 text-violet-800',
+          directory: 'bg-fuchsia-100 text-fuchsia-800',
+          utility: 'bg-rose-100 text-rose-800',
+          platform: 'bg-emerald-100 text-emerald-800',
+          media: 'bg-stone-100 text-stone-800',
+          presentation: 'bg-red-100 text-red-800',
+          audio: 'bg-blue-100 text-blue-800',
+          infrastructure: 'bg-gray-200 text-gray-800',
+          nlp: 'bg-purple-100 text-purple-800',
+          accessibility: 'bg-green-100 text-green-800',
+          general: 'bg-gray-100 text-gray-800',
+        };
+        return colors[category] || 'bg-gray-100 text-gray-800';
+      }
+      function getYouTubeID(url) {
+        /* ... (unchanged) ... */
+        if (!url || url === '#') return '';
+        const match = url.match(
+          /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([^?&\/\s]+)/
+        );
+        return match ? match[1] : '';
+      }
+      function formatDate(dateString) {
+        /* ... (unchanged, includes fallback parsing) ... */
+        if (!dateString) return 'תאריך לא זמין';
+        try {
+          const date = new Date(dateString);
+          if (isNaN(date.getTime())) {
+            console.warn('Could not parse date directly:', dateString);
+            const parts = dateString.match(
+              /(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/
+            );
+            if (parts) {
+              const isoDate = new Date(
+                `${parts[3]}-${parts[2].padStart(2, '0')}-${parts[1].padStart(
+                  2,
+                  '0'
+                )}T00:00:00Z`
+              );
+              if (!isNaN(isoDate.getTime()))
+                return isoDate.toLocaleDateString('he-IL', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                });
+            }
+            return 'תאריך לא תקין';
+          }
+          return date.toLocaleDateString('he-IL', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          });
+        } catch (e) {
+          console.error('Error formatting date:', dateString, e);
+          return 'תאריך לא תקין';
+        }
+      }
+
+      // --- Event Listeners Setup ---
+      function setupEventListeners() {
+        // Search input
+        searchInput.addEventListener('input', (e) => {
+          currentSearchTerm = e.target.value;
+          localStorage.setItem('searchTerm', currentSearchTerm); // שמור בזיכרון הדפדפן
+          renderTools();
+        });
+
+        // Filter buttons
+        filterButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            filterButtons.forEach((btn) => btn.classList.remove('active'));
+            button.classList.add('active');
+            currentCategory = button.dataset.category;
+            renderTools();
+          });
+        });
+
+        // Mobile menu toggle
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('open');
+        });
+
+        // Uncomment if using admin buttons
+        const editJsonBtn = document.getElementById('editJsonBtn');
+        const editJsonBtnMobile = document.getElementById('editJsonBtnMobile');
+        document
+          .getElementById('editJsonBtnFooter')
+          ?.addEventListener('click', openEditorHandler);
+
+        if (editJsonBtn)
+          editJsonBtn.addEventListener('click', openEditorHandler);
+        if (editJsonBtnMobile)
+          editJsonBtnMobile.addEventListener('click', openEditorHandler);
+
+        closeModalBtn.addEventListener('click', () =>
+          jsonEditorModal.classList.add('hidden')
+        );
+        cancelEditBtn.addEventListener('click', () =>
+          jsonEditorModal.classList.add('hidden')
+        );
+
+        // JSON Editor Save Button -> Saves ONLY to localStorage for the current session
+        saveJsonBtn.addEventListener('click', () => {
+          try {
+            const rawData = JSON.parse(jsonEditor.value);
+            if (!Array.isArray(rawData))
+              throw new Error('Data must be an array.');
+            if (showToolsBtn.classList.contains('bg-blue-600')) {
+              // Update in-memory data and sort
+              toolsData.tools = rawData.map((tool) => ({
+                /* add defaults */ ...tool,
+                rating: tool.rating ?? 0,
+                isNew: tool.isNew ?? false,
+                category: tool.category ?? 'general',
+                icon: tool.icon || 'fas fa-tools',
+                url: tool.url || '#',
+                description: tool.description || 'אין תיאור זמין.',
+                name: tool.name || 'שם לא ידוע',
+              }));
+              sortTools(currentSort);
+            } else {
+              toolsData.videos = rawData.map((video) => ({
+                /* add defaults */ ...video,
+                url: video.url || '#',
+                title: video.title || 'כותרת חסרה',
+                description: video.description || 'אין תיאור זמין.',
+                date: video.date ?? new Date().toISOString(),
+              }));
+            }
+            // Save the edited data to localStorage (will be lost on next full load)
+            saveData();
+            // Re-render the UI with the edited data for the current session
+            renderTools();
+            renderVideos();
+            updateStats();
+            jsonEditorModal.classList.add('hidden');
+            alert(
+              'הנתונים נשמרו זמנית (באחסון המקומי). הם יתעדכנו מחדש מהשרת בטעינה הבאה של הדף.'
+            );
+          } catch (e) {
+            alert('JSON לא תקין או שגיאה בשמירה:\n' + e.message);
+            console.error('JSON Save Error:', e);
+          }
+        });
+
+        showToolsBtn.addEventListener('click', () => {
+          /* ... (unchanged editor tab logic) ... */
+          showToolsBtn.classList.add('bg-blue-600', 'text-white');
+          showToolsBtn.classList.remove('bg-gray-200', 'text-gray-700');
+          showVideosBtn.classList.add('bg-gray-200', 'text-gray-700');
+          showVideosBtn.classList.remove('bg-blue-600', 'text-white');
+          jsonEditor.value = JSON.stringify(toolsData.tools, null, 2); // Show current in-memory tools data
+        });
+        showVideosBtn.addEventListener('click', () => {
+          /* ... (unchanged editor tab logic) ... */
+          showVideosBtn.classList.add('bg-blue-600', 'text-white');
+          showVideosBtn.classList.remove('bg-gray-200', 'text-gray-700');
+          showToolsBtn.classList.add('bg-gray-200', 'text-gray-700');
+          showToolsBtn.classList.remove('bg-blue-600', 'text-white');
+          jsonEditor.value = JSON.stringify(toolsData.videos, null, 2); // Show current in-memory videos data
+        });
+
+        // Sorting stat boxes (Unchanged)
+        if (topRatedStatBox) {
+          topRatedStatBox.addEventListener('click', () => {
+            sortTools('rating');
+            renderTools();
+            scrollToTools(); // גלילה חלקה לתחילת רשימת הכלים
+          });
+        }
+
+        if (newToolsStatBox) {
+          newToolsStatBox.addEventListener('click', () => {
+            sortTools('newest');
+            renderTools();
+            scrollToTools(); // גלילה חלקה לתחילת רשימת הכלים
+          });
+        }
+
+        // Refresh buttons - Now primarily resets filters/sort/search and re-renders current data
+        // It *could* re-fetch, but init() already does that on load.
+        // Let's make it just reset the view state.
+        const resetViewHandler = () => {
+          console.log('Resetting view state (filters, sort, search)...');
+          // Reset filters and search
+          searchInput.value = '';
+          currentSearchTerm = '';
+          filterButtons.forEach((btn) => btn.classList.remove('active'));
+          const allFilterBtn = document.querySelector(
+            '.filter-btn[data-category="all"]'
+          );
+          if (allFilterBtn) allFilterBtn.classList.add('active');
+          currentCategory = 'all';
+
+          // Reset sort to newest and re-render
+          sortTools('newest');
+          renderTools();
+          // No need to re-render videos unless their source changes, which this button doesn't do
+          // No need to update stats as the underlying data hasn't changed
+          alert('התצוגה אופסה (פילטרים, מיון וחיפוש נוקו).');
+        };
+
+        refreshBtn.addEventListener('click', resetViewHandler);
+        refreshBtnMobile.addEventListener('click', resetViewHandler);
+      }
+
+      // --- Initialize the app ---
+      document.addEventListener('DOMContentLoaded', init);
+
+      // JSON Editor Modal Logic (If admin buttons are enabled)
+      const openEditorHandler = () => {
+        document.getElementById('suggestToolModal').classList.remove('hidden');
+      };
+
+      const closeSuggestModal = () => {
+        document.getElementById('suggestToolModal').classList.add('hidden');
+      };
+
+      document
+        .getElementById('suggestToolForm')
+        .addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const form = e.target;
+          const rawPhone = form.userPhone.value;
+          const cleanedPhone = rawPhone.replace(/\D/g, ''); // מסיר כל תו שאינו ספרה
+          // alert(cleanedPhone)
+          const data = {
+            name: form.name.value,
+            url: form.url.value,
+            description: form.description.value,
+            userName: form.userName.value,
+            userPhone: cleanedPhone,
+          };
+
+          try {
+            await fetch(
+              'https://hook.eu2.make.com/lgo6nh36dk804dq1msfmwxo34nzf4o3y',
+              {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+              }
+            );
+
+            alert('הכלי נשלח בהצלחה!');
+            closeSuggestModal();
+            form.reset();
+          } catch (err) {
+            alert('שגיאה בשליחה 😢');
+            console.error(err);
+          }
+        });
+      function openVideoModal(url) {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('videoIframe');
+        iframe.src = url;
+        modal.classList.remove('hidden');
+      }
+
+      function closeVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('videoIframe');
+        iframe.src = '';
+        modal.classList.add('hidden');
+      }
+      fetch('tools.json')
+        .then((res) => res.json())
+        .then((tools) => {
+          const count = tools.length;
+          document.getElementById(
+            'toolsCount'
+          ).textContent = `${count} כלים זמינים`;
+        })
+        .catch((err) => {
+          console.error('שגיאה בטעינת כמות הכלים:', err);
+          document.getElementById('toolsCount').textContent = 'טעינה נכשלה';
+        });
+      function showNewToolBanner() {
+        const tools = toolsData.tools;
+        const lastSeenToolDate = localStorage.getItem('lastSeenToolDate');
+        const newTools = tools.filter((tool) => tool.isNew);
+        if (newTools.length === 0) return;
+
+        const latestTool = newTools.reduce((latest, tool) => {
+          return new Date(tool.dateAdded) > new Date(latest.dateAdded)
+            ? tool
+            : latest;
+        }, newTools[0]);
+
+        if (
+          !lastSeenToolDate ||
+          new Date(latestTool.dateAdded) > new Date(lastSeenToolDate)
+        ) {
+          const banner = document.getElementById('newToolBanner');
+          const toolNameSpan = document.getElementById('newToolName');
+          const closeBtn = document.getElementById('closeBanner');
+
+          toolNameSpan.textContent = latestTool.name;
+          banner.classList.remove('hidden');
+          const viewNowLink = banner.querySelector('a');
+          viewNowLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            filteredStatView = 'newTools';
+            currentCategory = 'all';
+            currentSearchTerm = '';
+            renderTools();
+            scrollToTools();
+          });
+
+          closeBtn.addEventListener('click', () => {
+            banner.classList.add('hidden');
+            localStorage.setItem('lastSeenToolDate', latestTool.dateAdded);
+          });
+        }
+      }
+
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('/service-worker.js')
+          .then(() => console.log('Service Worker registered successfully.'))
+          .catch((err) =>
+            console.error('Service Worker registration failed:', err)
+          );
+      }
+
+      let deferredPrompt;
+      const installBtn = document.getElementById('installAppBtn');
+      const container = document.getElementById('installAppContainer');
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installBtn.style.display = 'inline-block';
+
+        installBtn.addEventListener('click', () => {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the A2HS prompt');
+              installBtn.style.display = 'none';
+            } else {
+              console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+          });
+        });
+      });
+      // פונקציה להצגת כפתורי שיתוף
+      function renderShareButtons(tool) {
+        if (!tool.url || tool.url === '#') return '';
+
+        const encodedToolName = encodeURIComponent(tool.name);
+        const encodedDesc = encodeURIComponent(`בדקו את הכלי ${tool.name} - ${tool.description}`);
+        const encodedUrl = encodeURIComponent(tool.url);
+
+        // וודא שיש URL תקין לשיתוף
+        if (!tool.url || tool.url === '#') {
+          return ''; // לא מציג כפתורי שיתוף אם אין URL תקין
+        }
+
+        return `
+          <div class="share-buttons mt-4">
+            
+            <!-- דירוג + יוטיוב -->
+            <div class="flex justify-center items-center mb-4">
+                <div class="flex items-center gap-3">
+                    
+                    ${
+                      tool.video
+                        ? `
+                        <button class="share-btn yt"
+                                data-platform="youtube"
+                                data-video="${tool.video}"
+                                aria-label="צפייה בהדרכה"
+                                title="צפייה בהדרכה">
+                          <i class="fab fa-youtube"></i>
+                        </button>`
+                        : ''
+                    }
+                </div>
+            </div>
+
+            <button class="share-btn fb"  data-platform="facebook" data-url="${tool.url}" data-title="${tool.name}" aria-label="שיתוף בפייסבוק" title="לחצו כדי לשתף את הכלי">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+            <button class="share-btn wa"  data-platform="whatsapp" data-url="${tool.url}" data-title="${tool.name}" aria-label="שיתוף ב-WhatsApp" title="לחצו כדי לשתף את הכלי">
+              <i class="fab fa-whatsapp"></i>
+            </button>
+            <button class="share-btn tw"  data-platform="twitter" data-url="${tool.url}" data-title="${tool.name}" aria-label="שיתוף בטוויטר" title="לחצו כדי לשתף את הכלי">
+              <i class="fab fa-twitter"></i>
+            </button>
+            <button class="share-btn cp"  data-platform="copy" data-url="${tool.url}" aria-label="העתקת קישור" title="לחצו כדי לשתף את הכלי">
+              <i class="fas fa-link"></i>
+            </button>
+          </div>`;
+      }
+      // פונקציה לטיפול בלחיצה על כפתור המועדפים
+      function setupFavorites() {
+        // טעינת המועדפים מה-localStorage
+        let favorites = JSON.parse(
+          localStorage.getItem('aiToolsFavorites') || '[]'
+        );
+
+        // הוספת אירוע לחיצה לכפתורי המועדפים
+        document.querySelectorAll('.favorite-btn').forEach((btn) => {
+          const toolId = btn.dataset.id;
+
+          // עדכון המראה הראשוני בהתאם למצב
+          if (favorites.includes(toolId)) {
+            btn.classList.add('active');
+            btn.querySelector('i').classList.remove('far');
+            btn.querySelector('i').classList.add('fas');
+          }
+
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isFavorite = favorites.includes(toolId);
+
+            if (isFavorite) {
+              // הסרה מהמועדפים
+              favorites = favorites.filter((id) => id !== toolId);
+              btn.classList.remove('active');
+              btn.querySelector('i').classList.remove('fas');
+              btn.querySelector('i').classList.add('far');
+            } else {
+              // הוספה למועדפים
+              favorites.push(toolId);
+              btn.classList.add('active');
+              btn.querySelector('i').classList.remove('far');
+              btn.querySelector('i').classList.add('fas');
+            }
+
+            // שמירת המועדפים המעודכנים
+            localStorage.setItem('aiToolsFavorites', JSON.stringify(favorites));
+          });
+        });
+      }
+      // עדכון של פונקציית filterTools הקיימת להוספת תמיכה במועדפים
+      function filterTools() {
+        if (!toolsData || !Array.isArray(toolsData.tools)) return [];
+
+        // טעינת המועדפים מה-localStorage
+        const favorites = JSON.parse(
+          localStorage.getItem('aiToolsFavorites') || '[]'
+        );
+
+        let filtered = toolsData.tools;
+
+        // סינון לפי מועדפים (אם מסומן)
+        if (currentCategory === 'favorites') {
+          filtered = filtered.filter((_, index) =>
+            favorites.includes(index.toString())
+          );
+        }
+        // סינון לפי קטגוריה (כפי שהיה קודם)
+        else if (currentCategory === 'free') {
+          filtered = filtered.filter((tool) => tool.free === true);
+        } else if (currentCategory !== 'all') {
+          filtered = filtered.filter(
+            (tool) => tool.category === currentCategory
+          );
+        }
+
+        // סינון לפי חיפוש (נשאר כפי שהיה)
+        if (currentSearchTerm) {
+          const searchLower = currentSearchTerm.toLowerCase();
+          filtered = filtered.filter((tool) => {
+            const nameMatch =
+              tool.name && tool.name.toLowerCase().includes(searchLower);
+            const descMatch =
+              tool.description &&
+              tool.description.toLowerCase().includes(searchLower);
+            const categoryNameMatch = getCategoryName(tool.category)
+              .toLowerCase()
+              .includes(searchLower);
+            return nameMatch || descMatch || categoryNameMatch;
+          });
+        }
+
+        // בדיקה אם יש סינון לפי סטטוס נתונים (filteredStatView)
+        if (filteredStatView === 'topRated') {
+          filtered = filtered.filter((tool) => tool.rating >= 5);
+        } else if (filteredStatView === 'newTools') {
+          filtered = filtered.filter((tool) => tool.isNew);
+        }
+
+        return filtered;
+      }
+
+      // פונקציה לטיפול בכפתורי שיתוף
+      function setupShareButtons() {
+        const TOOLBOX_LINK = 'https://bit.ly/a-tools';
+
+        document.querySelectorAll('.share-btn').forEach((btn) => {
+          btn.addEventListener('click', async () => {
+            const platform = btn.dataset.platform;       // facebook | twitter | whatsapp | copy
+            const toolUrl  = btn.dataset.url;            // קישור ישיר לכלי
+            const title    = btn.dataset.title;          // שם הכלי
+
+            /* === טקסט שיתוף אחד לכל הערוצים === */
+            const shareMsg =
+              `בדקו את הכלי ${title} בלינק: ${toolUrl}\n\n` +
+              `מארגז הכלים של שגיא בר-און בכתובת: ${TOOLBOX_LINK}`;
+
+            /* ---------- העתקה ללוח ---------- */
+            if (platform === 'copy') {
+              try {
+                await navigator.clipboard.writeText(shareMsg);
+                btn.setAttribute('data-tooltip', '📋 הועתק!');
+                setTimeout(() => btn.removeAttribute('data-tooltip'), 1500);
+              } catch { alert('לא הצלחנו להעתיק – נסה ידנית'); }
+              return;
+            }
+            if (platform === 'youtube') {
+              openVideoModal(btn.dataset.video);   // כבר קיים בקובץ
+              return;
+            }
+            /* ---------- קידוד וכתובת שיתוף ---------- */
+            const encodedMsg = encodeURIComponent(shareMsg);
+            const encodedUrl = encodeURIComponent(toolUrl); // ל‑Preview
+            let shareUrl = '';
+
+            switch (platform) {
+              case 'facebook':  // כרטיס של הכלי, טקסט מלא
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedMsg}`;
+                break;
+              case 'twitter':   // כרטיס + טקסט
+                shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedMsg}`;
+                break;
+              case 'whatsapp':  // הכול בטקסט אחד – וואטסאפ מציג שני הלינקים
+                shareUrl = `https://api.whatsapp.com/send?text=${encodedMsg}`;
+                break;
+              default:
+                shareUrl = encodedUrl;
+            }
+
+            window.open(shareUrl, '_blank', 'noopener,noreferrer,width=600,height=500');
+          });
+        });
+      }
+
+
+
+      // פונקציה להוספת כפתור המועדפים לאזור הקטגוריות
+      function updateCategoryFilters() {
+        const categoryFilterDiv = document.querySelector('.category-filter');
+
+        // בודק אם כפתור המועדפים כבר קיים
+        if (!document.querySelector('[data-category="favorites"]')) {
+          const favoritesBtn = document.createElement('button');
+          favoritesBtn.className =
+            'filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm hover:bg-gray-100 transition';
+          favoritesBtn.dataset.category = 'favorites';
+          favoritesBtn.innerHTML =
+            '<i class="fas fa-star text-yellow-400 ml-1"></i> מועדפים';
+
+          // הוספת הכפתור לאחר כפתור "הכל"
+          const allBtn = document.querySelector('[data-category="all"]');
+          if (allBtn && allBtn.parentNode) {
+            allBtn.parentNode.insertBefore(favoritesBtn, allBtn.nextSibling);
+
+            // הוספת אירוע לחיצה
+            favoritesBtn.addEventListener('click', () => {
+              document
+                .querySelectorAll('.filter-btn')
+                .forEach((btn) => btn.classList.remove('active'));
+              favoritesBtn.classList.add('active');
+              currentCategory = 'favorites';
+              renderTools();
+            });
+          }
+        }
+      }
     </script>
-</body>
+
+    <!-- /* --------------------------------- */
+    /* ------- END OF JAVASCRIPT ------- */
+    /* --------------------------------- */ -->
+  </body>
 </html>

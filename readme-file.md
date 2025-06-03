@@ -28,9 +28,6 @@
 
 ### דרישות
 
-- Node.js v14 ומעלה
-- npm v6 ומעלה
-
 ### שלבי התקנה
 
 1. הורד את קוד המקור:
@@ -86,3 +83,4 @@ ai-toolbox/
 1. ערוך את הקובץ `public/tools.json` או `public/videos.json`
 2. שמור את השינויים
 3. רענן את האתר לראות את הש
+4. https://huggingface.co/spaces/theWitcher/sagi-ai-tools
